@@ -106,7 +106,7 @@ onMounted(() => {
     </div>
 
     <!-- Content -->
-    <div class="relative z-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto mt-20">
+    <div class="relative z-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto mt-5">
       <div
         :class="[
           'transition-all duration-1000',
