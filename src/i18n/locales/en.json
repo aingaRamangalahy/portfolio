@@ -1,0 +1,217 @@
+{
+  "nav": {
+    "home": "Home",
+    "experience": "Experience",
+    "education": "Education",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
+    "languageSwitcherTooltip": "Change language",
+    "themeSwitcherTooltip": "Change theme"
+  },
+  "hero": {
+    "title": "Full-Stack Web Developer",
+    "description1": "Passionate, curious developer motivated by the desire to learn and improve constantly. With over 5 years of experience on various projects, I have developed strong listening skills and service orientation that enable me to work effectively in teams and meet client needs.",
+    "description2": "My technical capabilities are constantly evolving through continuous learning and regular technology monitoring. My goal is to provide innovative and high-performance solutions using best development practices and the most suitable technologies for each project.",
+    "description3": "I specialize in JavaScript and TypeScript development, with expertise in modern frameworks like Vue.js, Angular, and Node.js. My experience spans from building earth observation platforms for the \"new space\" domain to developing crowdfunding platforms for French municipalities.",
+    "description4": "Whether it's optimizing application performance, integrating complex APIs, or leading technical initiatives, I bring a combination of technical expertise and collaborative spirit to every project.",
+    "traits": {
+      "passionateLearner": "Passionate Learner",
+      "teamPlayer": "Team Player",
+      "serviceOriented": "Service Oriented"
+    },
+    "callToAction": "If this excites you, I'd love to hear from you.",
+    "viewWork": "View My Work",
+    "getInTouch": "Get In Touch",
+    "availableForWork": "Available for Work",
+    "availableDescription": "Currently accepting new projects and full-time opportunities. Let's build something amazing together.",
+    "quickStats": "Quick Stats",
+    "stats": {
+      "projectsCompleted": "Projects Completed",
+      "yearsExperience": "Years Experience",
+      "technologies": "Technologies",
+      "basedIn": "Location"
+    }
+  },
+  "experience": {
+    "title": "Professional Journey & Impact",
+    "subtitle": "Detailing my progression through diverse roles where I've driven innovation, delivered scalable solutions, and consistently contributed to team success.",
+    "achievements": "Key Achievements:",
+    "positions": {
+      "angular_dev": {
+        "title": "Angular Developer",
+        "company": "MonLogement.ai",
+        "location": "Remote",
+        "period": "September 2024 – Present",
+        "description": "Maintenance and development of KaiR, an online appointment scheduling solution for the social housing sector.",
+        "achievements": [
+          "Continuous improvement of user interface through numerous ergonomic optimizations and bug fixes",
+          "Application performance improvement through Firebase cloud functions optimization and critical bug fixes",
+          "Development of reusable Angular components and maintenance of existing code"
+        ]
+      },
+      "fullstack_js": {
+        "title": "Full-Stack JavaScript Developer",
+        "company": "Hairun Technology",
+        "location": "Antananarivo, Madagascar",
+        "period": "June 2022 – September 2024",
+        "description": "Maintenance and development of earth observation platform and crowdfunding platform for French municipalities.",
+        "achievements": [
+          "Developed interface for centralizing image and processing orders for earth observation platform",
+          "Created registration process for investors and borrowers on crowdfunding platform",
+          "Integrated Mangopay webhooks for real-time transaction notifications",
+          "Integrated France map with MapBox API highlighting project-carrying cities",
+          "Improved data management interface performance for better user experience"
+        ]
+      },
+      "angular_node": {
+        "title": "Angular and Node.js Developer",
+        "company": "W3D",
+        "location": "Antananarivo, Madagascar",
+        "period": "June 2020 – May 2022",
+        "description": "Design and development of Asset Manager application for managing 3D resources and virtual conference platform.",
+        "achievements": [
+          "Created custom theme with Angular Material in harmony with design guidelines",
+          "Developed file sharing interface and API (listing, upload, download)",
+          "Built user management system with role assignment functionality",
+          "Developed real-time messaging system with Socket.io for Q&A sessions",
+          "Created content management system for presentation images and videos"
+        ]
+      },
+      "web_dev": {
+        "title": "Web Developer",
+        "company": "Hellotana",
+        "location": "Antananarivo, Madagascar",
+        "period": "July 2019 – January 2020",
+        "description": "Web development and maintenance focused on responsive design and dashboard development.",
+        "achievements": [
+          "Redesigned hellopro.fr product page with responsive integration",
+          "Dynamized pages with PHP and jQuery for better user interaction",
+          "Maintained \"Process BPO\" web application used internally",
+          "Designed and developed comprehensive dashboard for BPO agent activity monitoring"
+        ]
+      }
+    }
+  },
+  "education": {
+    "title": "Foundations & Lifelong Learning",
+    "subtitle": "My academic background and commitment to continuous professional development form the bedrock of my technical expertise and innovative approach.",
+    "coursework": "Relevant Coursework:",
+    "achievements": "Achievements:",
+    "degrees": {
+      "masters": {
+        "degree": "Professional Master's Degree - General Computer Science Track",
+        "school": "National School of Computer Science",
+        "location": "Fianarantsoa, Madagascar",
+        "period": "2017 - 2019",
+        "description": "Advanced studies in computer science with focus on professional development and industry practices.",
+        "coursework": [
+          "Advanced Programming",
+          "Software Engineering",
+          "Database Design",
+          "System Architecture",
+          "Project Management"
+        ],
+        "achievements": ["Professional Master's Degree"]
+      },
+      "bachelors": {
+        "degree": "Professional Bachelor's Degree - General Computer Science Track",
+        "school": "National School of Computer Science",
+        "location": "Fianarantsoa, Madagascar",
+        "period": "2014 - 2017",
+        "description": "Comprehensive foundation in computer science fundamentals and software development practices.",
+        "coursework": [
+          "Programming Fundamentals",
+          "Data Structures",
+          "Algorithms",
+          "Computer Systems",
+          "Web Development"
+        ],
+        "achievements": ["Professional Bachelor's Degree"]
+      }
+    }
+  },
+  "projects": {
+    "title": "Portfolio of Solutions",
+    "subtitle": "Explore a selection of key projects where I've applied my skills to solve complex challenges, develop impactful features, and deliver high-quality results.",
+    "items": {
+      "kair": {
+        "title": "KaiR - Appointment Scheduling Solution",
+        "description": "Online appointment scheduling solution for the social housing sector. Focused on UI/UX improvements and Firebase performance optimization."
+      },
+      "earth_observation": {
+        "title": "Earth Observation Platform",
+        "description": "Platform for a French startup in the \"new space\" domain, featuring image and processing order management with enhanced data management interface."
+      },
+      "crowdfunding": {
+        "title": "Municipal Crowdfunding Platform",
+        "description": "Crowdfunding platform for French municipalities with investor/borrower registration, Mangopay integration, and interactive France map with MapBox."
+      },
+      "asset_manager": {
+        "title": "Asset Manager - 3D Resource Management",
+        "description": "Web application for managing 3D resources with file sharing capabilities, user management, and role assignment functionality."
+      },
+      "conference": {
+        "title": "Virtual Conference Platform",
+        "description": "Platform for international virtual conferences with content management, JWT authentication, and real-time Q&A messaging using Socket.io."
+      },
+      "dashboard": {
+        "title": "BPO Activity Dashboard",
+        "description": "Comprehensive dashboard providing insights into BPO agent activity and tool performance with responsive design."
+      },
+      "portfolio": {
+        "title": "Portfolio Website",
+        "description": "Personal portfolio website showcasing my skills, projects, and experiences."
+      },
+      "js_resources": {
+        "title": "JavaScript Resources (side project)",
+        "description": "Side project for a community based website for sharing top resources to learn JavaScript."
+      }
+    }
+  },
+  "skills": {
+    "title": "Technical Expertise",
+    "subtitle": "A comprehensive toolkit spanning modern web technologies, cloud infrastructure, and cutting-edge innovations.",
+    "languagesAndInterests": "Languages & Interests",
+    "categories": {
+      "frontend": "Frontend Development",
+      "backend": "Backend & Infrastructure",
+      "tools": "Development Tools & Testing",
+      "management": "Project Management & Methodologies"
+    },
+    "languages": {
+      "title": "Languages",
+      "french": "French",
+      "english": "English",
+      "malagasy": "Malagasy",
+      "levels": {
+        "excellent": "Excellent/Very Good",
+        "good": "Good/Fair",
+        "native": "Native"
+      }
+    },
+    "interests": {
+      "title": "Interests",
+      "volleyball": "Volleyball",
+      "music": "Music",
+      "reading": "Reading"
+    }
+  },
+  "contact": {
+    "title": "Let's Collaborate",
+    "subtitle": "Eager to discuss how my expertise can contribute to your next venture or explore opportunities for impactful collaboration. Let's build something exceptional together.",
+    "getInTouch": "Initiate a Conversation",
+    "description": "Reach out to explore how we can achieve great things.",
+    "sendEmail": "Send me an email",
+    "labels": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Retry"
+  }
+} 

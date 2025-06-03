@@ -1,0 +1,141 @@
+@import 'tailwindcss';
+
+/* Theme Variables */
+:root {
+  /* Default --color-* variables, intended to be overridden by .theme-current or other .theme-* classes for a consistent light mode experience */
+  --color-primary: oklch(0.145 0 0);       /* Default to Dark Text for light theme */
+  --color-secondary: oklch(0.205 0 0);     /* Default to Darker Accent for light theme */
+  --color-accent: oklch(0.45 0.15 260);    /* Default to Vivid Accent for light theme - will be overridden by .theme-current for default */
+  --color-background: oklch(1 0 0);        /* Default to White for card backgrounds in light theme */
+  --color-surface: oklch(0.97 0 0);       /* Default to Off-White for section backgrounds in light theme */
+  --color-text: oklch(0.145 0 0);          /* Default to Dark Text for light theme */
+  --color-text-secondary: oklch(0.35 0 0); /* Default to Muted Dark Text for light theme */
+  --color-border: oklch(0.922 0 0);        /* Default to Light Gray Border for light theme */
+  --color-gradient: linear-gradient(135deg, oklch(0.97 0 0) 0%, oklch(0.922 0 0) 100%); /* Default light gradient */
+
+  /* Shadcn Base Light Theme Variables (OKLCH) - This is the primary light/dark system for page body and base components */
+  --background: oklch(1 0 0); /* White - Page body background */
+  --foreground: oklch(0.145 0 0); /* Near Black - Page body text */
+  
+  --card: oklch(1 0 0); /* Card background in light mode */
+  --card-foreground: oklch(0.145 0 0); /* Card text in light mode */
+  
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  
+  --primary: oklch(0.205 0 0); /* Shadcn primary elements (e.g., buttons) - Dark Gray */
+  --primary-foreground: oklch(0.985 0 0); /* Text on shadcn primary elements - Light Gray */
+  
+  --secondary: oklch(0.97 0 0); /* Shadcn secondary elements - Light Gray */
+  --secondary-foreground: oklch(0.205 0 0); /* Text on shadcn secondary elements - Dark Gray */
+  
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0); 
+  
+  --accent: oklch(0.45 0.15 260); /* Shadcn accent (e.g. input focus ring) - A distinct blue/purple */
+  --accent-foreground: oklch(0.985 0 0); 
+  
+  --destructive: oklch(0.577 0.245 27.325); /* Reddish */
+  --destructive-foreground: oklch(0.985 0 0); /* Light text on destructive */
+  
+  --border: oklch(0.922 0 0); 
+  --input: oklch(0.922 0 0); 
+  --ring: oklch(0.45 0.15 260); /* Use the same as --accent for focus rings */
+
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+}
+
+/* Custom Theme Classes (Ghibli, Slack, Claude) - these override --color-* variables for different light themes */
+.theme-current { /* Default light theme using --color-* variables */
+  --color-primary: oklch(0.145 0 0); 
+  --color-secondary: oklch(0.205 0 0); 
+  --color-accent: oklch(0.5 0.03 260); /* Changed: Muted grayish-purple */
+  --color-background: oklch(1 0 0);    
+  --color-surface: oklch(0.97 0 0); 
+  --color-text: oklch(0.145 0 0); 
+  --color-text-secondary: oklch(0.35 0 0); 
+  --color-border: oklch(0.922 0 0);
+  --color-gradient: linear-gradient(135deg, oklch(0.97 0 0) 0%, oklch(0.922 0 0) 100%);
+}
+
+.theme-ghibli {
+  --color-primary: #2d5016; 
+  --color-secondary: #4a7c59; 
+  --color-accent: #c9df8a;    
+  --color-background: #f0f7e8; 
+  --color-surface: #e6efdc;    
+  --color-text: #2d5016;       
+  --color-text-secondary: #4a7c59;
+  --color-border: #a7c990;
+  --color-gradient: linear-gradient(135deg, #e6efdc 0%, #f0f7e8 100%);
+}
+
+.theme-slack {
+  --color-primary: #4a154b; 
+  --color-secondary: #611f69; 
+  --color-accent: #8e44ad;    /* Changed: Wisteria purple */
+  --color-background: #f8f8f8; 
+  --color-surface: #efefef;    
+  --color-text: #1d1c1d;       
+  --color-text-secondary: #605e60;
+  --color-border: #d1d0d1;
+  --color-gradient: linear-gradient(135deg, #efefef 0%, #f8f8f8 100%);
+}
+
+.theme-claude {
+  --color-primary: #c5633a; 
+  --color-secondary: #d97757; 
+  --color-accent: #ffb366;    
+  --color-background: #fdf6f0; 
+  --color-surface: #faefe5;    
+  --color-text: #7d3a1f;       
+  --color-text-secondary: #a75a39;
+  --color-border: #f0d4c4;
+  --color-gradient: linear-gradient(135deg, #faefe5 0%, #fdf6f0 100%);
+}
+
+/* Apply Shadcn theme variables */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: hsl(var(--background)); /* This will be light (white from :root) */
+  color: hsl(var(--foreground)); /* This will be dark (near black from :root) */
+}
+
+* {
+  border-color: hsl(var(--border)); /* Light gray border from :root */
+}
+
+/* Helper classes using the --color-* variables, which are changed by themes */
+.theme-bg { 
+  background: var(--color-background);
+}
+
+.theme-surface { 
+  background: var(--color-surface);
+}
+
+.theme-text { 
+  color: var(--color-text);
+}
+
+.theme-text-secondary { 
+  color: var(--color-text-secondary);
+}
+
+.theme-border {
+  border-color: var(--color-border);
+}
+
+.theme-gradient {
+  background: var(--color-gradient);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
