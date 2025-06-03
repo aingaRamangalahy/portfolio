@@ -97,39 +97,6 @@ pnpm build
 
 This command will create a `dist` folder with the optimized production build.
 
-## Project Structure (Simplified)
-
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   │   ├── custom/         # Custom reusable components
-│   │   ├── ui/             # Shadcn-vue UI components
-│   │   ├── AboutSection.vue
-│   │   ├── ContactSection.vue
-│   │   ├── EducationSection.vue
-│   │   ├── ExperienceSection.vue
-│   │   ├── Footer.vue
-│   │   ├── Header.vue
-│   │   ├── HeroSection.vue
-│   │   ├── ProjectsSection.vue
-│   │   └── SkillsSection.vue
-│   ├── composables/      # VueUse and custom composables (e.g., useTheme.ts)
-│   ├── locales/          # i18n translation files (en.json, fr.json)
-│   ├── router/           # Vue Router configuration (index.ts)
-│   ├── styles/           # Global styles and Tailwind config (style.css, tailwind.config.js)
-│   ├── views/            # Page views (e.g., HomeView.vue)
-│   ├── App.vue           # Main App component
-│   ├── main.ts           # Main entry point
-│   └── shims-vue.d.ts    # Vue shim for TypeScript
-├── index.html
-├── package.json
-├── tsconfig.json
-├── vite.config.ts
-└── README.md
-```
-
 ## Contributing
 
 Contributions are welcome! If you have suggestions or improvements, feel free to open an issue or submit a pull request.
