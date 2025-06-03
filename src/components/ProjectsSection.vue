@@ -30,7 +30,7 @@ interface ProjectKey {
 const projectKeys: ProjectKey[] = [
   { key: 'kair', icon: Monitor, category: 'Web App', hasUrl: false, hasGithub: false },
   { key: 'js_resources', icon: Code, category: 'Website', hasUrl: true, hasGithub: true, githubUrl: 'https://github.com/aingaRamangalahy/jsr', url: 'https://jsresources.dev' },
-  { key: 'portfolio', icon: User, category: 'Website', hasUrl: true, hasGithub: true, githubUrl: 'https://github.com/aingaRamangalahy/portfolio', url: 'https://ainga.me' },
+  { key: 'portfolio', icon: User, category: 'Website', hasUrl: true, hasGithub: true, githubUrl: 'https://github.com/aingaRamangalahy/portfolio', url: 'https://www.ainga.me' },
   { key: 'earth_observation', icon: Globe, category: 'Web App', hasUrl: false, hasGithub: false },
   { key: 'crowdfunding', icon: BarChart, category: 'Web App', hasUrl: false, hasGithub: false },
   { key: 'asset_manager', icon: Database, category: 'Web App', hasUrl: false, hasGithub: false },
