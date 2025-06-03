@@ -10,7 +10,6 @@ This is a personal portfolio website built with modern web technologies. It show
 - **Tailwind CSS v4:** A utility-first CSS framework for rapid UI development.
 - **Shadcn-vue:** Re-usable components built using Radix UI and Tailwind CSS.
 - **Vue Router:** For client-side routing.
-- **Pinia:** For state management.
 - **VueUse:** A collection of Vue Composition Utilities.
 - **i18next:** For internationalization.
 
