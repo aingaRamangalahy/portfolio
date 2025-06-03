@@ -76,7 +76,7 @@ onUnmounted(() => {
       <!-- Logo -->
       <div class="mb-6 text-center">
         <div class="w-10 h-10 bg-[var(--color-primary)] rounded-lg flex items-center justify-center mx-auto transition-colors duration-300">
-          <span class="text-[var(--color-background)] font-bold text-sm">&lt;&gt;</span>
+          <span class="text-[var(--color-background)] font-bold text-sm">{ }</span>
         </div>
       </div>
 
