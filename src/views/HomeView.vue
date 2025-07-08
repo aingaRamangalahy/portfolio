@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import HeroSection from '@/components/HeroSection.vue'
+import AboutSection from '@/components/AboutSection.vue'
 import NavigationSidebar from '@/components/NavigationSidebar.vue'
+import ProjectsSection from '@/components/ProjectsSection.vue'
 import ExperienceSection from '@/components/ExperienceSection.vue'
 import EducationSection from '@/components/EducationSection.vue'
-import ProjectsSection from '@/components/ProjectsSection.vue'
 import SkillsSection from '@/components/SkillsSection.vue'
 import ContactSection from '@/components/ContactSection.vue'
 </script>
@@ -16,9 +17,10 @@ import ContactSection from '@/components/ContactSection.vue'
     <!-- Main Content -->
     <main>
       <HeroSection />
+      <AboutSection />
+      <ProjectsSection />
       <ExperienceSection />
       <EducationSection />
-      <ProjectsSection />
       <SkillsSection />
       <ContactSection />
     </main>

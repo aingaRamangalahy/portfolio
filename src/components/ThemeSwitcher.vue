@@ -3,8 +3,10 @@ import { ref } from 'vue'
 import { Palette } from 'lucide-vue-next'
 import { Button } from '@/components/ui/button'
 import { useTheme, type ThemeName } from '@/composables/useTheme'
+import { useI18n } from 'vue-i18n'
 
-const { currentTheme, themes, setTheme } = useTheme()
+const { t } = useI18n()
+const { currentThemeName, themes, setTheme } = useTheme()
 const showThemePanel = ref(false)
 
 function toggleThemePanel() {
@@ -54,17 +56,17 @@ onUnmounted(() => {
     >
       <!-- Header -->
       <div class="px-4 py-3 border-b theme-border">
-        <h3 class="theme-text font-semibold text-sm">Themes</h3>
+        <h3 class="theme-text font-semibold text-sm">{{ t('themeSwitcher.title') }}</h3>
       </div>
 
       <!-- Theme List -->
       <div class="py-2">
-        <template v-for="theme in Object.values(themes)" :key="theme.name">
+        <template v-for="(theme, name) in themes" :key="name">
           <button
-            @click="selectTheme(theme.name)"
+            @click="selectTheme(name)"
             :class="[
               'w-full px-4 py-3 text-left transition-colors duration-200 flex items-center gap-3 hover:bg-[var(--color-accent)]/20',
-              currentTheme === theme.name ? 'bg-[var(--color-accent)]/30' : ''
+              currentThemeName === name ? 'bg-[var(--color-accent)]/30' : ''
             ]"
           >
             <!-- Theme Preview Circle -->
@@ -83,7 +85,7 @@ onUnmounted(() => {
 
             <!-- Active Indicator -->
             <div
-              v-if="currentTheme === theme.name"
+              v-if="currentThemeName === name"
               class="w-2 h-2 rounded-full bg-[var(--color-accent)] flex-shrink-0"
             ></div>
           </button>

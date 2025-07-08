@@ -1,9 +1,7 @@
-import { ref, computed, watch } from 'vue'
-
-export type ThemeName = 'current' | 'ghibli' | 'slack' | 'claude'
+import { ref, computed, onMounted } from 'vue'
 
 export interface Theme {
-  name: ThemeName
+  name: string
   label: string
   icon: string
   preview: string
@@ -20,126 +18,122 @@ export interface Theme {
   }
 }
 
+export type ThemeName = 'current' | 'ghibli' | 'slack' | 'claude'
+
 const themes: Record<ThemeName, Theme> = {
   current: {
     name: 'current',
-    label: 'Default Light',
-    icon: '💡',
-    preview: 'linear-gradient(135deg, oklch(0.97 0 0) 0%, oklch(0.922 0 0) 100%)',
+    label: 'Modern Minimal',
+    icon: '✨',
+    preview: 'linear-gradient(135deg, oklch(0.98 0 0) 0%, oklch(0.94 0 0) 100%)',
     colors: {
-      primary: 'oklch(0.145 0 0)',
-      secondary: 'oklch(0.205 0 0)',
-      accent: 'oklch(0.5 0.03 260)',
+      primary: 'oklch(0.15 0.05 270)',
+      secondary: 'oklch(0.25 0.03 270)',
+      accent: 'oklch(0.65 0.15 250)',
       background: 'oklch(1 0 0)',
-      surface: 'oklch(0.97 0 0)',
-      text: 'oklch(0.145 0 0)',
-      textSecondary: 'oklch(0.35 0 0)',
-      border: 'oklch(0.922 0 0)',
-      gradient: 'linear-gradient(135deg, oklch(0.97 0 0) 0%, oklch(0.922 0 0) 100%)'
+      surface: 'oklch(0.98 0 0)',
+      text: 'oklch(0.12 0.02 270)',
+      textSecondary: 'oklch(0.45 0.01 270)',
+      border: 'oklch(0.94 0 0)',
+      gradient: 'linear-gradient(135deg, oklch(0.98 0 0) 0%, oklch(0.96 0 0) 100%)'
     }
   },
   ghibli: {
     name: 'ghibli',
-    label: 'Ghibli Studio',
-    icon: '🌿',
-    preview: 'linear-gradient(135deg, #e6efdc 0%, #f0f7e8 100%)',
+    label: 'Nature Green',
+    icon: '🌱',
+    preview: 'linear-gradient(135deg, oklch(0.95 0.02 120) 0%, oklch(0.88 0.03 120) 100%)',
     colors: {
-      primary: '#2d5016',
-      secondary: '#4a7c59',
-      accent: '#c9df8a',
-      background: '#f0f7e8',
-      surface: '#e6efdc',
-      text: '#2d5016',
-      textSecondary: '#4a7c59',
-      border: '#a7c990',
-      gradient: 'linear-gradient(135deg, #e6efdc 0%, #f0f7e8 100%)'
+      primary: 'oklch(0.35 0.15 140)',
+      secondary: 'oklch(0.45 0.12 140)',
+      accent: 'oklch(0.75 0.12 120)',
+      background: 'oklch(0.98 0.01 120)',
+      surface: 'oklch(0.95 0.02 120)',
+      text: 'oklch(0.25 0.08 140)',
+      textSecondary: 'oklch(0.50 0.06 140)',
+      border: 'oklch(0.88 0.03 120)',
+      gradient: 'linear-gradient(135deg, oklch(0.95 0.02 120) 0%, oklch(0.98 0.01 120) 100%)'
     }
   },
   slack: {
     name: 'slack',
-    label: 'Slack',
-    icon: '💬',
-    preview: 'linear-gradient(135deg, #4a154b 0%, #611f69 50%, #8e44ad 100%)',
+    label: 'Professional Purple',
+    icon: '💼',
+    preview: 'linear-gradient(135deg, oklch(0.96 0.01 320) 0%, oklch(0.90 0.02 320) 100%)',
     colors: {
-      primary: '#4a154b',
-      secondary: '#611f69',
-      accent: '#8e44ad',
-      background: '#f8f8f8',
-      surface: '#efefef',
-      text: '#1d1c1d',
-      textSecondary: '#605e60',
-      border: '#d1d0d1',
-      gradient: 'linear-gradient(135deg, #efefef 0%, #f8f8f8 100%)'
+      primary: 'oklch(0.30 0.15 320)',
+      secondary: 'oklch(0.40 0.12 320)',
+      accent: 'oklch(0.60 0.18 280)',
+      background: 'oklch(0.99 0 0)',
+      surface: 'oklch(0.96 0.01 320)',
+      text: 'oklch(0.15 0.02 320)',
+      textSecondary: 'oklch(0.45 0.03 320)',
+      border: 'oklch(0.90 0.02 320)',
+      gradient: 'linear-gradient(135deg, oklch(0.96 0.01 320) 0%, oklch(0.99 0 0) 100%)'
     }
   },
   claude: {
     name: 'claude',
-    label: 'Claude',
-    icon: '🤖',
-    preview: 'linear-gradient(135deg, #faefe5 0%, #fdf6f0 100%)',
+    label: 'Warm Terracotta',
+    icon: '🎨',
+    preview: 'linear-gradient(135deg, oklch(0.95 0.02 40) 0%, oklch(0.88 0.03 40) 100%)',
     colors: {
-      primary: '#c5633a',
-      secondary: '#d97757',
-      accent: '#ffb366',
-      background: '#fdf6f0',
-      surface: '#faefe5',
-      text: '#7d3a1f',
-      textSecondary: '#a75a39',
-      border: '#f0d4c4',
-      gradient: 'linear-gradient(135deg, #faefe5 0%, #fdf6f0 100%)'
+      primary: 'oklch(0.45 0.12 40)',
+      secondary: 'oklch(0.55 0.10 40)',
+      accent: 'oklch(0.70 0.15 50)',
+      background: 'oklch(0.98 0.01 40)',
+      surface: 'oklch(0.95 0.02 40)',
+      text: 'oklch(0.25 0.06 40)',
+      textSecondary: 'oklch(0.50 0.05 40)',
+      border: 'oklch(0.88 0.03 40)',
+      gradient: 'linear-gradient(135deg, oklch(0.95 0.02 40) 0%, oklch(0.98 0.01 40) 100%)'
     }
   }
 }
 
 const THEME_STORAGE_KEY = 'portfolio-theme'
 
-const currentTheme = ref<ThemeName>('current')
+const currentThemeName = ref<ThemeName>('current')
 
-// Load theme from localStorage
-if (typeof window !== 'undefined') {
-  const stored = localStorage.getItem(THEME_STORAGE_KEY) as ThemeName
-  if (stored && themes[stored]) {
-    currentTheme.value = stored
-  }
-}
-
-function applyTheme(themeName: ThemeName) {
-  const theme = themes[themeName]
-  const root = document.documentElement
-
-  // Apply CSS custom properties
-  Object.entries(theme.colors).forEach(([key, value]) => {
-    // Convert camelCase to kebab-case for CSS variables
-    const cssKey = key === 'textSecondary' ? 'text-secondary' : key
-    root.style.setProperty(`--color-${cssKey}`, value)
-  })
-
-  // Apply theme class
-  root.className = root.className.replace(/theme-\w+/g, '')
-  root.classList.add(`theme-${themeName}`)
-}
+const currentTheme = computed(() => themes[currentThemeName.value])
 
 function setTheme(themeName: ThemeName) {
-  currentTheme.value = themeName
-  applyTheme(themeName)
+  currentThemeName.value = themeName
+  applyTheme(themes[themeName])
   localStorage.setItem(THEME_STORAGE_KEY, themeName)
 }
 
-// Apply initial theme
-if (typeof window !== 'undefined') {
-  applyTheme(currentTheme.value)
+function applyTheme(theme: Theme) {
+  const root = document.documentElement
+  
+  // Remove any existing theme classes
+  Object.keys(themes).forEach(name => {
+    root.classList.remove(`theme-${name}`)
+  })
+  
+  // Add the new theme class
+  root.classList.add(`theme-${theme.name}`)
 }
 
-// Watch for theme changes
-watch(currentTheme, (newTheme) => {
-  applyTheme(newTheme)
-})
+function loadSavedTheme() {
+  const savedTheme = localStorage.getItem(THEME_STORAGE_KEY) as ThemeName
+  if (savedTheme && savedTheme in themes) {
+    setTheme(savedTheme)
+  } else {
+    setTheme('current')
+  }
+}
 
 export function useTheme() {
+  onMounted(() => {
+    loadSavedTheme()
+  })
+
   return {
-    currentTheme: computed(() => currentTheme.value),
     themes,
+    currentTheme,
+    currentThemeName,
     setTheme,
-    getCurrentTheme: () => themes[currentTheme.value]
+    loadSavedTheme
   }
 } 

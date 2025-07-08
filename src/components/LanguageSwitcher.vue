@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { Globe } from 'lucide-vue-next'
 import { Button } from '@/components/ui/button'
 import { LOCALE_STORAGE_KEY } from '@/i18n'
 
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 const showDropdown = ref(false)
 
-const languages = [
-  { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'fr', name: 'Français', flag: '🇫🇷' }
-]
+const languages = computed(() => [
+  { code: 'en', name: t('languages.en'), flag: '🇺🇸' },
+  { code: 'fr', name: t('languages.fr'), flag: '🇫🇷' }
+])
 
 function changeLanguage(lang: string) {
   locale.value = lang
