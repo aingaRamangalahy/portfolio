@@ -5,7 +5,7 @@ import { Analytics } from '@vercel/analytics/vue'
 
 <template>
   <Analytics />
-  <div id="app">
+  <div id="app" class="lg:pl-24">
     <RouterView />
   </div>
 </template>

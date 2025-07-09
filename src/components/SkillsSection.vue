@@ -1,10 +1,22 @@
 <script setup lang="ts">
-import { Card, CardContent } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { useI18n } from 'vue-i18n'
-import { Code, Server, Wrench, Users, Star } from 'lucide-vue-next'
-import { computed } from 'vue'
+import { Code, Server, Wrench, Users, Star, Sparkles } from 'lucide-vue-next'
+import { computed, ref } from 'vue'
+import FloatingIcons from '@/components/custom/FloatingIcons.vue'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+
+// Technology icons
+import VueIcon from '@/components/icons/vue.js.vue'
+import TypeScriptIcon from '@/components/icons/typescript.vue'
+import JavaScriptIcon from '@/components/icons/javascript.vue'
+import NodeIcon from '@/components/icons/node.vue'
+import AngularIcon from '@/components/icons/angular.vue'
+import MongoDBIcon from '@/components/icons/mongodb.vue'
 
 const { t, tm } = useI18n()
+const showAllSkills = ref(false)
 
 interface Skill {
   name: string
@@ -24,87 +36,174 @@ const skillCategories = computed((): SkillCategory[] => [
   { key: 'management', icon: Users, skills: tm('skills.skills.management') as Skill[] },
 ])
 
-const languages = computed(() => [
-  { name: t('skills.languages.french'), level: t('skills.languages.levels.excellent'), flag: '🇫🇷' },
-  { name: t('skills.languages.english'), level: t('skills.languages.levels.good'), flag: '🇺🇸' },
-  { name: t('skills.languages.malagasy'), level: t('skills.languages.levels.native'), flag: '🇲🇬' },
-])
+// Function to get technology icon component
+function getTechIcon(skillName: string) {
+  const iconMap: Record<string, any> = {
+    'Vue.js': VueIcon,
+    'TypeScript': TypeScriptIcon,
+    'JavaScript': JavaScriptIcon,
+    'Node.js': NodeIcon,
+    'Angular': AngularIcon,
+    'MongoDB': MongoDBIcon,
+  }
+  return iconMap[skillName] || null
+}
 
-const interests = computed(() => [
-  { name: t('skills.interests.volleyball'), icon: '🏐' },
-  { name: t('skills.interests.music'), icon: '🎵' },
-  { name: t('skills.interests.reading'), icon: '📚' },
-])
+const coreSkills = (category: SkillCategory) => category.skills.filter(s => s.core)
+const otherSkills = (category: SkillCategory) => category.skills.filter(s => !s.core)
+
+// Filter categories based on showAllSkills state
+const visibleCategories = computed(() => {
+  if (showAllSkills.value) {
+    return skillCategories.value
+  }
+  // Only show categories that have core skills
+  return skillCategories.value.filter(category => coreSkills(category).length > 0)
+})
+
+const hasHiddenCategories = computed(() => {
+  return skillCategories.value.some(category => coreSkills(category).length === 0)
+})
 </script>
 
 <template>
   <section 
     id="skills" 
-    class="py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-8"
+    class="py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
     :style="{ backgroundColor: 'var(--color-surface)' }"
   >
+    <FloatingIcons />
     <div class="max-w-6xl mx-auto">
       
       <!-- Section Header -->
-      <div class="text-center mb-20">
+      <div class="text-center mb-16">
         <h2 class="text-heading text-[var(--color-text)] mb-6">{{ t('skills.title') }}</h2>
         <p class="text-body-large text-[var(--color-text-secondary)] max-w-3xl mx-auto">{{ t('skills.subtitle') }}</p>
       </div>
 
-      <!-- Technical Skills - Globe Design -->
-      <div class="grid md:grid-cols-2 gap-16">
-        <template v-for="(category, index) in skillCategories" :key="index">
-          <div class="group relative">
-            <!-- Category Globe -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-to-br from-[var(--color-primary)]/10 to-[var(--color-primary)]/5 rounded-full flex items-center justify-center text-center p-4 transition-all duration-500 group-hover:scale-110">
-              <div class="flex flex-col items-center">
-                <component :is="category.icon" class="icon-lg text-[var(--color-primary)] mb-2" />
-                <h3 class="text-subheading font-bold text-[var(--color-text)]">
-                  {{ t(`skills.categories.${category.key}`) }}
-                </h3>
-              </div>
+      <!-- Technical Skills - Enhanced Design -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <Card 
+          v-for="category in visibleCategories" 
+          :key="category.key" 
+          class="group bg-[var(--color-background)] border border-[var(--color-border)] hover:shadow-xl hover:border-[var(--color-primary)]/30 transition-all duration-300 flex flex-col relative overflow-hidden"
+        >
+          <!-- Subtle gradient overlay -->
+          <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          
+          <CardHeader class="flex-row items-center gap-4 pb-4 relative z-10">
+            <div class=" flex items-center gap-2 p-3 bg-gradient-to-br from-[var(--color-primary)]/20 to-[var(--color-primary)]/10 rounded-xl group-hover:scale-110 transition-transform duration-300">
+              <component :is="category.icon" class="icon-lg text-[var(--color-primary)]" />
+              <CardTitle class="text-subheading font-bold text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors duration-300">
+                {{ t(`skills.categories.${category.key}`) }}
+              </CardTitle>
             </div>
+            
+          </CardHeader>
+          
+          <CardContent class="flex-grow pt-4 relative z-10">
+            <p class="text-body text-[var(--color-text-secondary)] mb-6 leading-relaxed">{{ t(`skills.descriptions.${category.key}`) }}</p>
 
-            <!-- Satellite Skills -->
-            <div class="relative w-full h-96">
-              <template v-for="(skill, skillIndex) in category.skills" :key="skillIndex">
-                <div 
-                  class="absolute transition-all duration-300 ease-in-out group-hover:scale-110"
-                  :style="{ 
-                    top: `calc(50% + ${Math.sin(skillIndex / category.skills.length * 2 * Math.PI) * 160}px - 24px)`,
-                    left: `calc(50% + ${Math.cos(skillIndex / category.skills.length * 2 * Math.PI) * 160}px - 48px)`
-                  }"
-                >
-                  <div 
-                    class="px-4 py-2 rounded-full shadow-md flex items-center gap-2 cursor-default transition-all duration-200"
-                    :class="{
-                      'bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary)]/70 text-white border-transparent shadow-lg shadow-[var(--color-primary)]/30': skill.core,
-                      'bg-[var(--color-background)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:border-[var(--color-primary)]/50 hover:text-[var(--color-text)]': !skill.core
-                    }"
-                  >
-                    <Star v-if="skill.core" class="icon-xs text-yellow-300" />
-                    <span 
-                      class="text-caption whitespace-nowrap"
-                      :class="{ 'font-bold': skill.core, 'font-semibold': !skill.core }"
-                    >{{ skill.name }}</span>
+            <template v-if="coreSkills(category).length > 0">
+              <!-- Core Skills with Enhanced Design -->
+              <div class="space-y-4">
+                <div class="flex items-center gap-2 mb-4">
+                  <Sparkles class="icon-sm text-[var(--color-primary)]" />
+                  <span class="text-sm font-semibold text-[var(--color-text)] uppercase tracking-wider">{{ t('skills.coreTitle') }}</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-3">
+                  <template v-for="skill in coreSkills(category)" :key="skill.name">
+                    <Badge 
+                      variant="default" 
+                      class="group/badge px-4 py-2.5 text-sm font-bold shadow-lg shadow-[var(--color-primary)]/20 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl border border-[var(--color-primary)]/20 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary)]/90"
+                    >
+                      <div class="flex items-center gap-2">
+                        <!-- Technology Icon -->
+                        <component 
+                          v-if="getTechIcon(skill.name)" 
+                          :is="getTechIcon(skill.name)" 
+                          class="w-4 h-4 opacity-90 group-hover/badge:opacity-100 transition-opacity duration-300" 
+                        />
+                        <!-- Star icon for skills without custom icons -->
+                        <Star 
+                          v-else
+                          class="icon-xs text-yellow-300 group-hover/badge:text-yellow-200 transition-colors duration-300" 
+                        />
+                        <span class="text-white font-medium">{{ skill.name }}</span>
+                      </div>
+                    </Badge>
+                  </template>
+                </div>
+              </div>
+
+              <!-- Other Skills -->
+              <template v-if="showAllSkills && otherSkills(category).length > 0">
+                <div class="mt-8 pt-6 border-t border-[var(--color-border)]">
+                  <div class="flex items-center gap-2 mb-4">
+                    <span class="text-sm font-semibold text-[var(--color-text-secondary)] uppercase tracking-wider">{{ t('skills.additionalTitle') }}</span>
+                  </div>
+                  <div class="flex flex-wrap gap-2">
+                    <template v-for="skill in otherSkills(category)" :key="skill.name">
+                      <Badge 
+                        variant="secondary" 
+                        class="px-3 py-1.5 cursor-pointer transition-all duration-300 hover:bg-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/40 border border-transparent"
+                      >
+                        {{ skill.name }}
+                      </Badge>
+                    </template>
                   </div>
                 </div>
               </template>
-            </div>
-          </div>
-        </template>
+            </template>
+            <template v-else>
+              <!-- Directly show all skills if no core skills -->
+              <div class="flex flex-wrap gap-2">
+                <template v-for="skill in otherSkills(category)" :key="skill.name">
+                  <Badge 
+                    variant="secondary" 
+                    class="px-3 py-1.5 cursor-pointer transition-all duration-300 hover:bg-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/40 border border-transparent"
+                  >
+                    {{ skill.name }}
+                  </Badge>
+                </template>
+              </div>
+            </template>
+          </CardContent>
+        </Card>
+      </div>
+      
+      <!-- Toggle Button with Enhanced Design -->
+      <div class="text-center mt-16">
+        <Button 
+          @click="showAllSkills = !showAllSkills" 
+          variant="outline" 
+          class="group px-8 py-6 text-lg font-semibold border-2 border-[var(--color-primary)]/30 hover:border-[var(--color-primary)] hover:bg-[var(--color-primary)]/10 transition-all duration-300"
+        >
+          <Sparkles class="icon-sm mr-2 text-[var(--color-primary)] group-hover:rotate-12 transition-transform duration-300" />
+          {{ showAllSkills ? t('skills.showLess') : t('skills.showMore') }}
+          <span class="ml-2 transition-transform duration-300 text-[var(--color-primary)]" :class="{ 'rotate-180': showAllSkills }">↓</span>
+        </Button>
+        
+        <p v-if="!showAllSkills && hasHiddenCategories" class="text-sm text-[var(--color-text-secondary)] mt-4">
+          {{ t('skills.hiddenCategoriesMessage') }}
+        </p>
       </div>
 
-      <!-- Call to Action -->
+      <!-- Call to Action with Enhanced Design -->
       <div class="text-center mt-20">
-        <Card class="inline-block p-8 bg-[var(--color-background)] border border-[var(--color-border)] hover:shadow-lg transition-shadow duration-300">
+        <Card class="inline-block p-8 bg-gradient-to-r from-[var(--color-background)] to-[var(--color-background)]/80 border border-[var(--color-border)] hover:shadow-xl hover:border-[var(--color-primary)]/40 transition-all duration-300 group">
           <div class="flex items-center gap-6">
-            <div class="p-4 bg-[var(--color-primary)]/10 rounded-2xl">
+            <div class="p-4 bg-gradient-to-br from-[var(--color-primary)]/20 to-[var(--color-primary)]/10 rounded-2xl group-hover:scale-110 transition-transform duration-300">
               <Code class="icon-xl text-[var(--color-primary)]" />
             </div>
             <div class="text-left">
-              <h3 class="text-subheading text-[var(--color-text)] font-semibold mb-2">{{ t('skills.callToAction.title') }}</h3>
-              <p class="text-body text-[var(--color-text-secondary)] max-w-md">{{ t('skills.callToAction.description') }}</p>
+              <h3 class="text-subheading text-[var(--color-text)] font-semibold mb-2 group-hover:text-[var(--color-primary)] transition-colors duration-300">
+                {{ t('skills.callToAction.title') }}
+              </h3>
+              <p class="text-body text-[var(--color-text-secondary)] max-w-md leading-relaxed">
+                {{ t('skills.callToAction.description') }}
+              </p>
             </div>
           </div>
         </Card>

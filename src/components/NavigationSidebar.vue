@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from 'vue'
-import { User, Briefcase, GraduationCap, Folder, Code, Mail, Palette, Globe, ExternalLink, Github, Linkedin, Menu, X } from 'lucide-vue-next'
+import { Home, User, Briefcase, GraduationCap, Folder, Code, Mail, Palette, Globe, ExternalLink, Github, Linkedin, Menu, X } from 'lucide-vue-next'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { useI18n } from 'vue-i18n'
@@ -14,7 +14,7 @@ const showLanguagePanel = ref(false)
 const showMobileMenu = ref(false)
 
 const navItems = [
-  { id: 'hero', href: '#hero', icon: User, label: 'nav.home' },
+  { id: 'hero', href: '#hero', icon: Home, label: 'nav.home' },
   { id: 'about', href: '#about', icon: User, label: 'nav.about' },
   { id: 'projects', href: '#projects', icon: Folder, label: 'nav.projects' },
   { id: 'experience', href: '#experience', icon: Briefcase, label: 'nav.experience' },
@@ -57,6 +57,20 @@ function changeLanguage(lang: string) {
   showLanguagePanel.value = false
 }
 
+function toggleThemePanel() {
+  if (showLanguagePanel.value) {
+    showLanguagePanel.value = false
+  }
+  showThemePanel.value = !showThemePanel.value
+}
+
+function toggleLanguagePanel() {
+  if (showThemePanel.value) {
+    showThemePanel.value = false
+  }
+  showLanguagePanel.value = !showLanguagePanel.value
+}
+
 function openLink(url: string) {
   window.open(url, '_blank', 'noopener,noreferrer')
 }
@@ -88,8 +102,8 @@ onUnmounted(() => {
 
 <template>
   <!-- Desktop Navigation -->
-  <nav class="fixed left-8 top-1/2 -translate-y-1/2 z-50 hidden lg:block">
-    <Card class="p-2 bg-[var(--color-background)]/80 backdrop-blur-xl border border-[var(--color-border)]/50 shadow-2xl">
+  <nav class="fixed left-0 top-0 h-screen z-50 hidden lg:block">
+    <Card class="flex flex-col h-full p-2 bg-[var(--color-background)]/80 border-0 backdrop-blur-xl shadow-2xl">
       <div class="flex flex-col gap-1">
         <!-- Navigation Items -->
         <template v-for="item in navItems" :key="item.id">
@@ -98,7 +112,7 @@ onUnmounted(() => {
             size="sm"
             @click="scrollToSection(item.href)"
             :class="[
-              'group relative w-12 h-12 p-0 rounded-xl transition-all duration-300',
+              'group relative w-12 h-12 p-0 transition-all duration-300',
               activeSection === item.id 
                 ? 'bg-[var(--color-primary)] text-[var(--color-background)] shadow-lg' 
                 : 'text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-surface)]'
@@ -113,18 +127,17 @@ onUnmounted(() => {
             </div>
           </Button>
         </template>
+      </div>
 
-        <!-- Divider -->
-        <div class="w-8 h-px bg-[var(--color-border)] mx-auto my-2"></div>
-
+      <div class="mt-auto flex flex-col gap-1">
         <!-- Theme Switcher -->
         <div class="relative">
           <Button
             variant="ghost"
             size="sm"
-            @click.stop="showThemePanel = !showThemePanel"
+            @click.stop="toggleThemePanel"
             :class="[
-              'group w-12 h-12 p-0 rounded-xl transition-all duration-300',
+              'group relative w-12 h-12 p-0 rounded-xl transition-all duration-300',
               showThemePanel 
                 ? 'bg-[var(--color-primary)] text-[var(--color-background)]' 
                 : 'text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-surface)]'
@@ -140,7 +153,7 @@ onUnmounted(() => {
           </Button>
 
           <!-- Theme Panel -->
-          <div v-if="showThemePanel" @click.stop class="absolute left-16 top-0 w-80 p-4 bg-[var(--color-background)] border border-[var(--color-border)] rounded-2xl shadow-2xl">
+          <div v-if="showThemePanel" @click.stop class="absolute left-16 bottom-0 w-80 p-4 bg-[var(--color-background)] border border-[var(--color-border)] rounded-2xl shadow-2xl">
             <h3 class="text-subheading font-semibold text-[var(--color-text)] mb-4">{{ t('nav.chooseTheme') }}</h3>
             <div class="grid grid-cols-2 gap-3">
               <template v-for="(theme, name) in themes" :key="name">
@@ -171,9 +184,9 @@ onUnmounted(() => {
           <Button
             variant="ghost"
             size="sm"
-            @click.stop="showLanguagePanel = !showLanguagePanel"
+            @click.stop="toggleLanguagePanel"
             :class="[
-              'group w-12 h-12 p-0 rounded-xl transition-all duration-300',
+              'group relative w-12 h-12 p-0 rounded-xl transition-all duration-300',
               showLanguagePanel 
                 ? 'bg-[var(--color-primary)] text-[var(--color-background)]' 
                 : 'text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-surface)]'
@@ -189,7 +202,7 @@ onUnmounted(() => {
           </Button>
 
           <!-- Language Panel -->
-          <div v-if="showLanguagePanel" @click.stop class="absolute left-16 top-0 w-64 p-4 bg-[var(--color-background)] border border-[var(--color-border)] rounded-2xl shadow-2xl">
+          <div v-if="showLanguagePanel" @click.stop class="absolute left-16 bottom-0 w-64 p-4 bg-[var(--color-background)] border border-[var(--color-border)] rounded-2xl shadow-2xl">
             <h3 class="text-subheading font-semibold text-[var(--color-text)] mb-4">{{ t('nav.language') }}</h3>
             <div class="space-y-2">
               <template v-for="lang in languages" :key="lang.code">
@@ -210,16 +223,13 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <!-- Divider -->
-        <div class="w-8 h-px bg-[var(--color-border)] mx-auto my-2"></div>
-
         <!-- Social Links -->
         <template v-for="social in socialLinks" :key="social.name">
           <Button
             variant="ghost"
             size="sm"
             @click="openLink(social.url)"
-            class="group w-12 h-12 p-0 rounded-xl text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-surface)] transition-all duration-300"
+            class="group relative w-12 h-12 p-0 rounded-xl text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-surface)] transition-all duration-300"
           >
             <component :is="social.icon" class="icon-md" />
             
@@ -235,7 +245,7 @@ onUnmounted(() => {
   </nav>
 
   <!-- Mobile Navigation -->
-  <nav class="hidden">
+  <nav class="lg:hidden">
     <!-- Mobile Header -->
     <div class="fixed top-0 left-0 right-0 z-50 p-4 bg-[var(--color-background)]/80 backdrop-blur-xl border-b border-[var(--color-border)]/50">
       <div class="flex items-center justify-between">
@@ -260,7 +270,7 @@ onUnmounted(() => {
 
     <!-- Mobile Menu -->
     <div
-      v-if="showMobileMenu"
+      v-show="showMobileMenu"
       class="fixed inset-0 z-40 bg-[var(--color-background)]/95 backdrop-blur-xl pt-20"
     >
       <div class="p-6 space-y-6">
@@ -321,29 +331,6 @@ onUnmounted(() => {
           </template>
         </div>
       </div>
-    </div>
-
-    <!-- Mobile Bottom Navigation -->
-    <div class="fixed bottom-6 left-6 right-6 z-50 lg:hidden">
-      <Card class="p-2 bg-[var(--color-background)]/80 backdrop-blur-xl border border-[var(--color-border)]/50 shadow-2xl">
-        <div class="flex justify-between items-center gap-1">
-          <template v-for="item in navItems.slice(0, 5)" :key="item.id">
-            <Button
-              variant="ghost"
-              size="sm"
-              @click="scrollToSection(item.href)"
-              :class="[
-                'flex-1 h-12 p-0 rounded-xl transition-all duration-300',
-                activeSection === item.id 
-                  ? 'bg-[var(--color-primary)] text-[var(--color-background)]' 
-                  : 'text-[var(--color-text-secondary)] hover:bg-[var(--color-surface)]'
-              ]"
-            >
-              <component :is="item.icon" class="icon-md" />
-            </Button>
-          </template>
-        </div>
-      </Card>
     </div>
   </nav>
 </template> 

@@ -34,7 +34,7 @@
     "getInTouch": "Get In Touch",
     "availableForWork": "Available for Work",
     "availableDescription": "Currently accepting new projects and full-time opportunities. Let's build something amazing together.",
-    "quickStats": "Quick Stats",
+    "quickStats": "At a Glance",
     "stats": {
       "projectsCompleted": "Projects Completed",
       "yearsExperience": "Years Experience",
@@ -147,7 +147,9 @@
           "System Architecture",
           "Project Management"
         ],
-        "achievements": ["Professional Master's Degree"]
+        "achievements": [
+          "Professional Master's Degree"
+        ]
       },
       "bachelors": {
         "degree": "Professional Bachelor's Degree - General Computer Science Track",
@@ -162,7 +164,9 @@
           "Computer Systems",
           "Web Development"
         ],
-        "achievements": ["Professional Bachelor's Degree"]
+        "achievements": [
+          "Professional Bachelor's Degree"
+        ]
       }
     }
   },
@@ -247,47 +251,44 @@
   "skills": {
     "title": "Technical Expertise",
     "subtitle": "A comprehensive toolkit spanning modern web technologies, cloud infrastructure, and cutting-edge innovations.",
-    "languagesAndInterests": "Languages & Interests",
-    "callToAction": {
-      "title": "Always Learning",
-      "description": "Continuously expanding my skill set with the latest technologies and best practices."
+    "descriptions": {
+      "frontend": "Building responsive, accessible, and performant user interfaces with a focus on modern frameworks and best practices.",
+      "backend": "Developing robust and scalable server-side applications, APIs, and database solutions.",
+      "tools": "Utilizing a wide range of development tools, platforms, and version control systems to streamline workflows.",
+      "management": "Applying agile methodologies and project management principles to ensure successful project delivery."
     },
+    "showMore": "Show All Skills",
+    "showLess": "Show Core Skills",
+    "coreTitle": "Core Skills",
+    "additionalTitle": "Additional Skills",
+    "hiddenCategoriesMessage": "Some categories are hidden until you show all skills",
     "categories": {
-      "frontend": "Frontend Development",
-      "backend": "Backend & Infrastructure",
-      "tools": "Development Tools & Testing",
-      "management": "Project Management & Methodologies"
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Tools & Platforms",
+      "management": "Project Management"
     },
     "skills": {
       "frontend": [
-        { "name": "JavaScript" }, { "name": "TypeScript", "core": true }, { "name": "Vue.js", "core": true }, { "name": "Nuxt.js" }, { "name": "Angular", "core": true }, { "name": "Vuetify" }, { "name": "Angular Material" }, { "name": "NgRx" }, { "name": "Vuex" }, { "name": "Pinia" }
+        { "name": "JavaScript", "core": true }, { "name": "TypeScript", "core": true }, { "name": "Vue.js", "core": true }, { "name": "Nuxt.js" }, { "name": "Angular", "core": true }, { "name": "Vuetify" }, { "name": "Angular Material" }, { "name": "NgRx" }, { "name": "Vuex" }, { "name": "Pinia" }
       ],
       "backend": [
-        { "name": "Node.js", "core": true }, { "name": "Express.js" }, { "name": "Nest.js" }, { "name": "Socket.io" }, { "name": "MongoDB" }, { "name": "MySQL" }, { "name": "Firebase" }, { "name": "DigitalOcean" }
+        { "name": "Node.js", "core": true }, { "name": "Express.js" }, { "name": "Nest.js" }, { "name": "Socket.io" }, { "name": "MongoDB", "core": true }, { "name": "MySQL" }, { "name": "Firebase" }, { "name": "DigitalOcean" }, { "name": "Supabase" }
       ],
       "tools": [
         { "name": "Jest" }, { "name": "Vitest" }, { "name": "Nightwatch.js" }, { "name": "Playwright" }, { "name": "Git" }, { "name": "GitHub Projects" }, { "name": "GitLab" }, { "name": "Bitbucket" }
       ],
       "management": [
-        { "name": "Jira" }, { "name": "Trello" }, { "name": "ClickUp" }, { "name": "GitHub Projects" }, { "name": "Agile" }, { "name": "UML" }
+        { "name": "Agile Methodologies" },
+        { "name": "Scrum" },
+        { "name": "Jira" },
+        { "name": "ClickUp" },
+        { "name": "Trello" }
       ]
     },
-    "languages": {
-      "title": "Languages",
-      "french": "French",
-      "english": "English",
-      "malagasy": "Malagasy",
-      "levels": {
-        "excellent": "Excellent/Very Good",
-        "good": "Good/Fair",
-        "native": "Native"
-      }
-    },
-    "interests": {
-      "title": "Interests",
-      "volleyball": "Volleyball",
-      "music": "Music",
-      "reading": "Reading"
+    "callToAction": {
+      "title": "Ready to build?",
+      "description": "I'm always open to discussing new projects and opportunities."
     }
   },
   "languages": {

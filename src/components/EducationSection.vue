@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { GraduationCap, MapPin, Calendar, ChevronDown, Award, BookOpen } from 'lucide-vue-next'
 import { Card, CardContent } from '@/components/ui/card'
 import { useI18n } from 'vue-i18n'
+import FloatingIcons from '@/components/custom/FloatingIcons.vue'
 
-const { t } = useI18n()
+const { t, tm } = useI18n()
 
 const expandedIndex = ref<number | null>(null)
 
@@ -34,7 +35,7 @@ const degreeKeys: DegreeKey[] = [
 
 // Helper functions to get coursework and achievements arrays
 function getCoursework(key: string): string[] {
-  const courseworkItems = t(`education.degrees.${key}.coursework`)
+  const courseworkItems = tm(`education.degrees.${key}.coursework`)
   if (Array.isArray(courseworkItems)) {
     return courseworkItems.filter(item => typeof item === 'string') as string[]
   }
@@ -42,14 +43,14 @@ function getCoursework(key: string): string[] {
 }
 
 function getAchievements(key: string): string[] {
-  const achievementItems = t(`education.degrees.${key}.achievements`)
+  const achievementItems = tm(`education.degrees.${key}.achievements`)
   if (Array.isArray(achievementItems)) {
     return achievementItems.filter(item => typeof item === 'string') as string[]
   }
   return []
 }
 
-const education: Education[] = degreeKeys.map(({ key }) => ({
+const education = computed<Education[]>(() => degreeKeys.map(({ key }) => ({
   degree: t(`education.degrees.${key}.degree`),
   school: t(`education.degrees.${key}.school`),
   location: t(`education.degrees.${key}.location`),
@@ -58,7 +59,7 @@ const education: Education[] = degreeKeys.map(({ key }) => ({
   description: t(`education.degrees.${key}.description`),
   coursework: getCoursework(key),
   achievements: getAchievements(key)
-}))
+})))
 
 const certifications = []
 </script>
@@ -66,9 +67,10 @@ const certifications = []
 <template>
   <section 
     id="education" 
-    class="py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-8"
+    class="py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
     :style="{ backgroundColor: 'var(--color-surface)' }"
   >
+    <FloatingIcons />
     <div class="max-w-6xl mx-auto">
       
       <!-- Section Header -->

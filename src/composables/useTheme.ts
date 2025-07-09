@@ -40,7 +40,7 @@ const themes: Record<ThemeName, Theme> = {
   },
   ghibli: {
     name: 'ghibli',
-    label: 'Nature Green',
+    label: 'Ghibli Studio',
     icon: '🌱',
     preview: 'linear-gradient(135deg, oklch(0.95 0.02 120) 0%, oklch(0.88 0.03 120) 100%)',
     colors: {
@@ -57,7 +57,7 @@ const themes: Record<ThemeName, Theme> = {
   },
   slack: {
     name: 'slack',
-    label: 'Professional Purple',
+    label: 'Slack',
     icon: '💼',
     preview: 'linear-gradient(135deg, oklch(0.96 0.01 320) 0%, oklch(0.90 0.02 320) 100%)',
     colors: {
@@ -74,7 +74,7 @@ const themes: Record<ThemeName, Theme> = {
   },
   claude: {
     name: 'claude',
-    label: 'Warm Terracotta',
+    label: 'Claude AI',
     icon: '🎨',
     preview: 'linear-gradient(135deg, oklch(0.95 0.02 40) 0%, oklch(0.88 0.03 40) 100%)',
     colors: {

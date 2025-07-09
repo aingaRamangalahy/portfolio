@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { useI18n } from 'vue-i18n'
 import { computed } from 'vue'
+import FloatingIcons from '@/components/custom/FloatingIcons.vue'
 
 const { t } = useI18n()
 
@@ -47,9 +48,10 @@ function openLink(href: string) {
 <template>
   <section 
     id="contact" 
-    class="py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-8"
+    class="py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
     :style="{ backgroundColor: 'var(--color-background)' }"
   >
+    <FloatingIcons />
     <div class="max-w-4xl mx-auto">
       
       <!-- Section Header -->

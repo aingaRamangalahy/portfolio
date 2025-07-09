@@ -34,7 +34,7 @@
     "getInTouch": "Entrer en Contact",
     "availableForWork": "Disponible pour Missions",
     "availableDescription": "J'accepte actuellement de nouveaux projets et des opportunités à temps plein. Construisons quelque chose d'extraordinaire ensemble.",
-    "quickStats": "Statistiques Rapides",
+    "quickStats": "En Bref",
     "stats": {
       "projectsCompleted": "Projets Réalisés",
       "yearsExperience": "Années d'Expérience",
@@ -147,7 +147,9 @@
           "Architecture Système",
           "Gestion de Projet"
         ],
-        "achievements": ["Master Professionnel"]
+        "achievements": [
+          "Diplôme de Master Professionnel"
+        ]
       },
       "bachelors": {
         "degree": "Licence Professionnelle - Parcours Informatique Générale",
@@ -162,7 +164,9 @@
           "Systèmes Informatiques",
           "Développement Web"
         ],
-        "achievements": ["Licence Professionnelle"]
+        "achievements": [
+          "Diplôme de Licence Professionnelle"
+        ]
       }
     }
   },
@@ -247,47 +251,44 @@
   "skills": {
     "title": "Expertise Technique",
     "subtitle": "Une boîte à outils complète couvrant les technologies web modernes, l'infrastructure cloud et les innovations de pointe.",
-    "languagesAndInterests": "Langues & Centres d'Intérêt",
-    "callToAction": {
-      "title": "Toujours en Apprentissage",
-      "description": "J'élargis continuellement mes compétences avec les dernières technologies et les meilleures pratiques."
+    "descriptions": {
+      "frontend": "Création d'interfaces utilisateur réactives, accessibles et performantes en mettant l'accent sur les frameworks modernes et les meilleures pratiques.",
+      "backend": "Développement d'applications côté serveur, d'API et de solutions de base de données robustes et évolutives.",
+      "tools": "Utilisation d'un large éventail d'outils de développement, de plateformes et de systèmes de contrôle de version pour optimiser les flux de travail.",
+      "management": "Application des méthodologies agiles et des principes de gestion de projet pour assurer le succès de la livraison des projets."
     },
+    "showMore": "Afficher Toutes les Compétences",
+    "showLess": "Afficher les Compétences Clés",
+    "coreTitle": "Compétences Clés",
+    "additionalTitle": "Compétences Supplémentaires",
+    "hiddenCategoriesMessage": "Certaines catégories sont masquées jusqu'à ce que vous affichiez toutes les compétences",
     "categories": {
-      "frontend": "Développement Frontend",
-      "backend": "Backend & Infrastructure",
-      "tools": "Outils de Développement & Tests",
-      "management": "Gestion de Projet & Méthodologies"
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Outils & Plateformes",
+      "management": "Gestion de Projet"
     },
     "skills": {
       "frontend": [
-        { "name": "JavaScript" }, { "name": "TypeScript", "core": true }, { "name": "Vue.js", "core": true }, { "name": "Nuxt.js" }, { "name": "Angular", "core": true }, { "name": "Vuetify" }, { "name": "Angular Material" }, { "name": "NgRx" }, { "name": "Vuex" }, { "name": "Pinia" }
+        { "name": "JavaScript", "core": true }, { "name": "TypeScript", "core": true }, { "name": "Vue.js", "core": true }, { "name": "Nuxt.js" }, { "name": "Angular", "core": true }, { "name": "Vuetify" }, { "name": "Angular Material" }, { "name": "NgRx" }, { "name": "Vuex" }, { "name": "Pinia" }
       ],
       "backend": [
-        { "name": "Node.js", "core": true }, { "name": "Express.js" }, { "name": "Nest.js" }, { "name": "Socket.io" }, { "name": "MongoDB" }, { "name": "MySQL" }, { "name": "Firebase" }, { "name": "DigitalOcean" }
+        { "name": "Node.js", "core": true }, { "name": "Express.js" }, { "name": "Nest.js" }, { "name": "Socket.io" }, { "name": "MongoDB", "core": true }, { "name": "MySQL" }, { "name": "Firebase" }, { "name": "DigitalOcean" }
       ],
       "tools": [
         { "name": "Jest" }, { "name": "Vitest" }, { "name": "Nightwatch.js" }, { "name": "Playwright" }, { "name": "Git" }, { "name": "GitHub Projects" }, { "name": "GitLab" }, { "name": "Bitbucket" }
       ],
       "management": [
-        { "name": "Jira" }, { "name": "Trello" }, { "name": "ClickUp" }, { "name": "GitHub Projects" }, { "name": "Agile" }, { "name": "UML" }
+        { "name": "Méthodologies Agiles" },
+        { "name": "Scrum" },
+        { "name": "Jira" },
+        { "name": "ClickUp" },
+        { "name": "Trello" }
       ]
     },
-    "languages": {
-      "title": "Langues",
-      "french": "Français",
-      "english": "Anglais",
-      "malagasy": "Malgache",
-      "levels": {
-        "excellent": "Excellente/Très Bien",
-        "good": "Bien/Assez Bien",
-        "native": "Langue Maternelle"
-      }
-    },
-    "interests": {
-      "title": "Centres d'Intérêt",
-      "volleyball": "Volley-ball",
-      "music": "Musique",
-      "reading": "Lecture"
+    "callToAction": {
+      "title": "Prêt à construire ?",
+      "description": "Je suis toujours ouvert à la discussion de nouveaux projets et opportunités."
     }
   },
   "languages": {

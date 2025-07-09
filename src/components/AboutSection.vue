@@ -3,6 +3,7 @@ import { ref, onMounted, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { Card } from '@/components/ui/card'
 import { ExternalLink, MapPin, Calendar, Layers, Heart, Target } from 'lucide-vue-next'
+import FloatingIcons from '@/components/custom/FloatingIcons.vue'
 
 const { t } = useI18n()
 const mounted = ref(false)
@@ -11,6 +12,24 @@ const descriptions = computed(() => [
   t('hero.description2'),
   t('hero.description3'),
   t('hero.description4')
+])
+
+const quickStats = computed(() => [
+  {
+    icon: Calendar,
+    label: t('hero.stats.yearsExperience'),
+    value: t('about.yearsExperienceValue')
+  },
+  {
+    icon: Layers,
+    label: t('hero.stats.coreStacks'),
+    value: t('about.coreStacksValue')
+  },
+    {
+    icon: MapPin,
+    label: t('hero.stats.basedIn'),
+    value: t('hero.location')
+  },
 ])
 
 onMounted(() => {
@@ -24,6 +43,7 @@ onMounted(() => {
     class="py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
     :style="{ backgroundColor: 'var(--color-background)' }"
   >
+    <FloatingIcons />
     <div class="max-w-7xl mx-auto">
       <div
         :class="[
@@ -83,46 +103,21 @@ onMounted(() => {
             </Card>
 
             <!-- Quick Stats Section (Right) -->
-            <div class="lg:col-span-1 space-y-4">
-              <!-- Location Card -->
-              <Card class="p-4 bg-[var(--color-surface)] border border-[var(--color-border)] hover:shadow-lg hover:scale-[1.02] transition-all duration-300 hover-lift">
-                <div class="flex items-center gap-4">
-                  <div class="p-2 bg-[var(--color-primary)]/10 rounded-lg">
-                    <MapPin class="icon-md text-[var(--color-primary)]" />
+            <Card class="lg:col-span-1 p-8 bg-[var(--color-surface)] border border-[var(--color-border)] hover:shadow-xl hover:scale-[1.01] transition-all duration-300 hover-lift">
+              <h3 class="text-subheading text-[var(--color-text)] font-semibold mb-6">{{ t('hero.quickStats') }}</h3>
+              <div class="space-y-5">
+                <template v-for="(stat, index) in quickStats" :key="stat.label">
+                  <div class="flex items-start gap-4">
+                    <component :is="stat.icon" class="icon-md text-[var(--color-primary)] mt-1 flex-shrink-0" />
+                    <div>
+                      <p class="text-body font-semibold text-[var(--color-text)]">{{ stat.label }}</p>
+                      <p class="text-body text-[var(--color-text-secondary)]">{{ stat.value }}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 class="text-body font-semibold text-[var(--color-text)]">{{ t('hero.stats.basedIn') }}</h4>
-                    <p class="text-caption text-[var(--color-text-secondary)]">{{ t('hero.location') }}</p>
-                  </div>
-                </div>
-              </Card>
-
-              <!-- Experience Card -->
-              <Card class="p-4 bg-[var(--color-surface)] border border-[var(--color-border)] hover:shadow-lg hover:scale-[1.02] transition-all duration-300 hover-lift">
-                <div class="flex items-center gap-4">
-                  <div class="p-2 bg-[var(--color-primary)]/10 rounded-lg">
-                    <Calendar class="icon-md text-[var(--color-primary)]" />
-                  </div>
-                  <div>
-                    <h4 class="text-body font-semibold text-[var(--color-text)]">{{ t('hero.stats.yearsExperience') }}</h4>
-                    <p class="text-caption text-[var(--color-text-secondary)]">{{ t('about.yearsExperienceValue') }}</p>
-                  </div>
-                </div>
-              </Card>
-
-              <!-- Core Stacks Card -->
-              <Card class="p-4 bg-[var(--color-surface)] border border-[var(--color-border)] hover:shadow-lg hover:scale-[1.02] transition-all duration-300 hover-lift">
-                <div class="flex items-center gap-4">
-                  <div class="p-2 bg-[var(--color-primary)]/10 rounded-lg">
-                    <Layers class="icon-md text-[var(--color-primary)]" />
-                  </div>
-                  <div>
-                    <h4 class="text-body font-semibold text-[var(--color-text)]">{{ t('hero.stats.coreStacks') }}</h4>
-                    <p class="text-caption text-[var(--color-text-secondary)]">{{ t('about.coreStacksValue') }}</p>
-                  </div>
-                </div>
-              </Card>
-            </div>
+                  <hr v-if="index < quickStats.length - 1" class="border-t-[var(--color-border)]/50" />
+                </template>
+              </div>
+            </Card>
           </div>
 
           <!-- Call to Action Card (Full Width) -->

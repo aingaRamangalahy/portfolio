@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { Calendar, MapPin, ChevronDown, Award } from 'lucide-vue-next'
 import { Card, CardContent } from '@/components/ui/card'
 import { useI18n } from 'vue-i18n'
+import FloatingIcons from '@/components/custom/FloatingIcons.vue'
 
 const { t, tm } = useI18n()
 
@@ -44,9 +45,10 @@ function getTechnologies(key: string): string[] {
 <template>
   <section 
     id="experience" 
-    class="py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-8"
+    class="py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
     :style="{ backgroundColor: 'var(--color-background)' }"
   >
+    <FloatingIcons />
     <div class="max-w-6xl mx-auto">
       
       <!-- Section Header -->
