@@ -1,3 +1,0 @@
-<template>
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100"><path fill="#8E8E8E" d="M80 7h20L50 93.3 0 7h38.2L50 27 61.5 7z"/><path fill="#8E8E8E" d="m0 7 50 86.3L100 7H80L50 58.8 19.8 7z"/><path fill="#454545" d="M19.8 7 50 59 80 7H61.5L50 27 38.2 7z"/></svg>
-</template>

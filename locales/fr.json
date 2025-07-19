@@ -1,0 +1,336 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "experience": "Expérience",
+    "education": "Formation",
+    "projects": "Projets",
+    "skills": "Compétences",
+    "contact": "Contact",
+    "languageSwitcherTooltip": "Changer de langue",
+    "themeSwitcherTooltip": "Changer de thème",
+    "socials": {
+      "githubTooltip": "Voir mon code sur GitHub",
+      "linkedinTooltip": "Connectez-vous avec moi sur LinkedIn"
+    },
+    "chooseTheme": "Choisir le Thème",
+    "language": "Langue",
+    "name": "Ainga"
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis <span class=\"text-[var(--color-primary)]\">Ainga</span>",
+    "title": "Développeur Web Full-Stack",
+    "description1": "Développeur passionné, curieux et motivé par l'envie d'apprendre et de m'améliorer constamment. Avec plus de 5 années d'expérience sur des projets variés, j'ai développé un sens de l'écoute et du service qui me permettent de travailler efficacement en équipe et de répondre aux besoins des clients.",
+    "description2": "Ma capacité technique est en constante évolution grâce à une formation continue et à une veille technologique régulière. Mon objectif est de fournir des solutions innovantes et performantes en utilisant les meilleures pratiques de développement et les technologies les plus adaptées à chaque projet.",
+    "description3": "Je me spécialise dans le développement JavaScript et TypeScript, avec une expertise dans les frameworks modernes comme Vue.js, Angular et Node.js. Mon expérience s'étend de la création de plateformes d'observation de la terre pour le domaine du \"new space\" au développement de plateformes de financement participatif pour les collectivités françaises.",
+    "description4": "Que ce soit pour optimiser les performances d'une application, intégrer des API complexes ou diriger des initiatives techniques, j'apporte une combinaison d'expertise technique et d'esprit collaboratif à chaque projet.",
+    "traits": {
+      "passionateLearner": "Apprenant Passionné",
+      "teamPlayer": "Esprit d'Équipe",
+      "serviceOriented": "Orienté Service"
+    },
+    "callToAction": "Si cela vous intéresse, j'aimerais avoir de vos nouvelles.",
+    "viewWork": "Voir Mes Projets",
+    "getInTouch": "Entrer en Contact",
+    "availableForWork": "Disponible pour Missions",
+    "availableDescription": "J'accepte actuellement de nouveaux projets et des opportunités à temps plein. Construisons quelque chose d'extraordinaire ensemble.",
+    "quickStats": "En Bref",
+    "stats": {
+      "projectsCompleted": "Projets Réalisés",
+      "yearsExperience": "Années d'Expérience",
+      "technologies": "Technologies",
+      "basedIn": "Localisation",
+      "coreStacks": "Stacks Principales"
+    },
+    "location": "Antananarivo, Madagascar",
+    "coreStacksList": ["Vue.js", "TypeScript", "Node.js", "Angular"],
+    "coreTechnologies": "Technologies Principales",
+    "letsConnect": "Connectons-nous"
+  },
+  "about": {
+    "title": "À Propos de Moi",
+    "whatDrivesMe": "Ce Qui Me Motive",
+    "yearsExperienceValue": "5+ ans",
+    "coreStacksValue": "Vue.js • TS • Node.js"
+  },
+  "experience": {
+    "title": "Parcours Professionnel & Impact",
+    "subtitle": "Description de ma progression à travers divers rôles où j'ai stimulé l'innovation, fourni des solutions évolutives et contribué de manière constante au succès des équipes.",
+    "achievements": "Réalisations Clés :",
+    "technologiesUsed": "Technologies Utilisées",
+    "callToAction": {
+      "title": "Prêt pour de Nouveaux Défis",
+      "description": "Discutons de la manière dont mon expérience peut contribuer à votre prochain projet."
+    },
+    "positions": {
+      "angular_dev": {
+        "title": "Développeur Angular",
+        "company": "MonLogement.ai",
+        "location": "Remote",
+        "period": "Septembre 2024 – Présent",
+        "description": "Maintenance et développement de KaiR, une solution de planification de rendez-vous en ligne pour le secteur du logement social.",
+        "achievements": [
+          "Amélioration continue de l'interface utilisateur à travers de nombreuses optimisations ergonomiques et corrections d'anomalies",
+          "Amélioration des performances de l'application via l'optimisation des cloud functions Firebase et la correction de bugs critiques",
+          "Développement de composants Angular réutilisables et maintenance du code existant"
+        ],
+        "tech": ["Angular 11", "NgRx", "Firebase", "GitLab", "ClickUp"]
+      },
+      "vue_node_dev": {
+        "title": "Développeur Vue.js et Node.js",
+        "company": "Hairun Technology",
+        "location": "Antananarivo, Madagascar",
+        "period": "Juin 2022 – Septembre 2024",
+        "description": "Maintenance et développement de plateforme d'observation de la terre et de plateforme de financement participatif pour les collectivités françaises.",
+        "achievements": [
+          "Développement de l'interface dédiée à la centralisation des commandes d'images et de traitement",
+          "Création du processus d'inscription pour les investisseurs et emprunteurs",
+          "Intégration des webhooks Mangopay pour les notifications de transactions en temps réel",
+          "Intégration d'une carte de France avec l'API MapBox mettant en évidence les villes porteuses de projets",
+          "Amélioration des performances de l'interface de gestion des données pour une meilleure expérience utilisateur"
+        ],
+        "tech": ["Vue.js", "Nuxt.js", "Vuetify", "Pinia", "Vuex", "Node.js", "Express", "MongoDB", "Vitest", "Nightwatch.js"]
+      },
+      "angular_node": {
+        "title": "Développeur Angular et Node.js",
+        "company": "W3D",
+        "location": "Antananarivo, Madagascar",
+        "period": "Juin 2020 – Mai 2022",
+        "description": "Conception et développement de l'application Asset Manager pour la gestion des ressources 3D et plateforme de conférence virtuelle.",
+        "achievements": [
+          "Création de thème personnalisé avec Angular Material en harmonie avec la charte graphique",
+          "Développement de l'interface et API pour le partage de fichiers (liste, upload, téléchargement)",
+          "Construction d'un système de gestion des utilisateurs avec fonctionnalité d'attribution de rôles",
+          "Développement d'un système de messagerie en temps réel avec Socket.io pour les sessions Q&R",
+          "Création d'un système de gestion des contenus pour les images et vidéos de présentation"
+        ],
+        "tech": ["Angular", "NgRx", "Node.js", "Express", "MongoDB", "Socket.io", "Angular Material", "Trello"]
+      },
+      "web_dev": {
+        "title": "Développeur Web",
+        "company": "Hellotana",
+        "location": "Antananarivo, Madagascar",
+        "period": "Juillet 2019 – Janvier 2020",
+        "description": "Développement web et maintenance axés sur le design responsive et le développement de tableaux de bord.",
+        "achievements": [
+          "Refonte de la page produit du site hellopro.fr avec intégration responsive",
+          "Dynamisation des pages avec PHP et jQuery pour une meilleure interaction utilisateur",
+          "Maintenance de l'application web \"Process BPO\" utilisée en interne",
+          "Conception et développement d'un tableau de bord complet pour le suivi de l'activité des agents BPO"
+        ],
+        "tech": ["PHP", "Bootstrap", "jQuery", "HTML", "CSS"]
+      }
+    }
+  },
+  "education": {
+    "title": "Fondations & Apprentissage Continu",
+    "subtitle": "Mon parcours académique et mon engagement envers le développement professionnel continu constituent le socle de mon expertise technique et de mon approche innovante.",
+    "coursework": "Matières Pertinentes :",
+    "achievements": "Réalisations :",
+    "gpa": "Moyenne",
+    "gpaValue": "N/A",
+    "commitment": {
+      "title": "Engagement envers l'Apprentissage",
+      "description": "Dévoué à l'apprentissage continu et à rester à la pointe de la technologie."
+    },
+    "degrees": {
+      "masters": {
+        "degree": "Master Professionnel - Parcours Informatique Générale",
+        "school": "École Nationale d'Informatique",
+        "location": "Fianarantsoa, Madagascar",
+        "period": "2017 - 2019",
+        "description": "Études avancées en informatique avec un focus sur le développement professionnel et les pratiques de l'industrie.",
+        "coursework": [
+          "Programmation Avancée",
+          "Génie Logiciel",
+          "Conception de Bases de Données",
+          "Architecture Système",
+          "Gestion de Projet"
+        ],
+        "achievements": [
+          "Diplôme de Master Professionnel"
+        ]
+      },
+      "bachelors": {
+        "degree": "Licence Professionnelle - Parcours Informatique Générale",
+        "school": "École Nationale d'Informatique",
+        "location": "Fianarantsoa, Madagascar",
+        "period": "2014 - 2017",
+        "description": "Fondation complète dans les fondamentaux de l'informatique et les pratiques de développement logiciel.",
+        "coursework": [
+          "Fondamentaux de Programmation",
+          "Structures de Données",
+          "Algorithmes",
+          "Systèmes Informatiques",
+          "Développement Web"
+        ],
+        "achievements": [
+          "Diplôme de Licence Professionnelle"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "title": "Portefeuille de Solutions",
+    "subtitle": "Découvrez une sélection de projets clés où j'ai appliqué mes compétences pour résoudre des défis complexes, développer des fonctionnalités marquantes et livrer des résultats de haute qualité.",
+    "categories": {
+      "webApp": "App Web",
+      "website": "Site Web",
+      "dashboard": "Tableau de Bord"
+    },
+    "types": {
+      "personal": "Personnel",
+      "professional": "Professionnel"
+    },
+    "techStack": "Stack Technique",
+    "live": "En Ligne",
+    "private": "Privé",
+    "callToAction": {
+      "title": "Explorer Plus sur GitHub",
+      "description": "Découvrez d'autres projets et contributions sur mon profil GitHub."
+    },
+    "items": {
+      "kair": {
+        "title": "KaiR - Solution de Planification de Rendez-vous",
+        "description": "Solution de planification de rendez-vous en ligne pour le secteur du logement social. Axé sur les améliorations UI/UX et l'optimisation des performances Firebase.",
+        "category": "App Web",
+        "tech": ["Angular", "NgRx", "Firebase"],
+        "type": "professional"
+      },
+      "js_resources": {
+        "title": "JavaScript Resources",
+        "description": "Site web communautaire pour partager les meilleures ressources pour apprendre JavaScript.",
+        "category": "Site Web",
+        "tech": ["Vue.js", "Nuxt.js", "TypeScript"],
+        "type": "personal"
+      },
+      "portfolio": {
+        "title": "Site Personnel",
+        "description": "Site personnel pour présenter mes compétences, projets et expériences.",
+        "category": "Site Web",
+        "tech": ["Vue.js", "TypeScript", "Vite"],
+        "type": "personal"
+      },
+      "earth_observation": {
+        "title": "Plateforme d'Observation de la Terre",
+        "description": "Plateforme pour une startup française du domaine \"new space\", avec gestion des commandes d'images et de traitement et interface de gestion des données améliorée.",
+        "category": "App Web",
+        "tech": ["Vue.js", "Node.js", "MongoDB"],
+        "type": "professional"
+      },
+      "crowdfunding": {
+        "title": "Plateforme de Financement Participatif Municipal",
+        "description": "Plateforme de financement participatif pour les collectivités françaises avec inscription investisseurs/emprunteurs, intégration Mangopay et carte interactive de France avec MapBox.",
+        "category": "App Web",
+        "tech": ["Angular", "Node.js", "MongoDB"],
+        "type": "professional"
+      },
+      "asset_manager": {
+        "title": "Asset Manager - Gestion de Ressources 3D",
+        "description": "Application web pour la gestion des ressources 3D avec capacités de partage de fichiers, gestion des utilisateurs et fonctionnalité d'attribution de rôles.",
+        "category": "App Web",
+        "tech": ["Angular", "Node.js", "Express"],
+        "type": "professional"
+      },
+      "conference": {
+        "title": "Plateforme de Conférence Virtuelle",
+        "description": "Plateforme pour conférences virtuelles internationales avec gestion de contenu, authentification JWT et messagerie Q&R en temps réel utilisant Socket.io.",
+        "category": "App Web",
+        "tech": ["Angular", "Socket.io"],
+        "type": "professional"
+      },
+      "dashboard": {
+        "title": "Tableau de Bord d'Activité BPO",
+        "description": "Tableau de bord complet fournissant des insights sur l'activité des agents BPO et les performances des outils avec design responsive.",
+        "category": "Tableau de Bord",
+        "tech": ["PHP", "jQuery", "Bootstrap"],
+        "type": "professional"
+      }
+    }
+  },
+  "skills": {
+    "title": "Expertise Technique",
+    "subtitle": "Une boîte à outils complète couvrant les technologies web modernes, l'infrastructure cloud et les innovations de pointe.",
+    "descriptions": {
+      "frontend": "Création d'interfaces utilisateur réactives, accessibles et performantes en mettant l'accent sur les frameworks modernes et les meilleures pratiques.",
+      "backend": "Développement d'applications côté serveur, d'API et de solutions de base de données robustes et évolutives.",
+      "tools": "Utilisation d'un large éventail d'outils de développement, de plateformes et de systèmes de contrôle de version pour optimiser les flux de travail.",
+      "management": "Application des méthodologies agiles et des principes de gestion de projet pour assurer le succès de la livraison des projets."
+    },
+    "showMore": "Afficher Toutes les Compétences",
+    "showLess": "Afficher les Compétences Clés",
+    "coreTitle": "Compétences Clés",
+    "additionalTitle": "Compétences Supplémentaires",
+    "hiddenCategoriesMessage": "Certaines catégories sont masquées jusqu'à ce que vous affichiez toutes les compétences",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Outils & Plateformes",
+      "management": "Gestion de Projet"
+    },
+    "skills": {
+      "frontend": [
+        { "name": "JavaScript", "core": true }, { "name": "TypeScript", "core": true }, { "name": "Vue.js", "core": true }, { "name": "Nuxt.js" }, { "name": "Angular", "core": true }, { "name": "Vuetify" }, { "name": "Angular Material" }, { "name": "NgRx" }, { "name": "Vuex" }, { "name": "Pinia" }
+      ],
+      "backend": [
+        { "name": "Node.js", "core": true }, { "name": "Express.js" }, { "name": "Nest.js" }, { "name": "Socket.io" }, { "name": "MongoDB", "core": true }, { "name": "MySQL" }, { "name": "Firebase" }, { "name": "DigitalOcean" }, { "name": "Supabase" }
+      ],
+      "tools": [
+        { "name": "Jest" }, { "name": "Vitest" }, { "name": "Nightwatch.js" }, { "name": "Playwright" }, { "name": "Git" }, { "name": "GitHub Projects" }, { "name": "GitLab" }, { "name": "Bitbucket" }
+      ],
+      "management": [
+        { "name": "Méthodologies Agiles" },
+        { "name": "Scrum" },
+        { "name": "Jira" },
+        { "name": "ClickUp" },
+        { "name": "Trello" }
+      ]
+    },
+    "callToAction": {
+      "title": "Prêt à construire ?",
+      "description": "Je suis toujours ouvert à la discussion de nouveaux projets et opportunités."
+    }
+  },
+  "languages": {
+    "en": "English",
+    "fr": "Français"
+  },
+  "contact": {
+    "title": "Collaborons Ensemble",
+    "subtitle": "Impatient de discuter de la manière dont mon expertise peut contribuer à votre prochain projet ou d'explorer des opportunités de collaboration fructueuse. Construisons quelque chose d'exceptionnel.",
+    "getInTouch": "Initier la Conversation",
+    "description": "Contactez-moi pour explorer comment nous pouvons réaliser de grandes choses.",
+    "sendEmail": "Envoyez-moi un email",
+    "labels": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    },
+    "socials": {
+      "email": {
+        "title": "Email",
+        "description": "Discutons de votre projet"
+      },
+      "github": {
+        "title": "GitHub",
+        "description": "Consultez mes dépôts"
+      },
+      "linkedin": {
+        "title": "LinkedIn",
+        "description": "Connectons-nous professionnellement"
+      }
+    },
+    "clickToOpen": "Cliquer pour ouvrir",
+    "openToOpportunities": "Ouvert aux opportunités",
+    "basedIn": "Basé à",
+    "availableForRemote": "Disponible pour du travail à distance dans le monde entier"
+  },
+  "themeSwitcher": {
+    "title": "Thèmes"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "retry": "Réessayer"
+  }
+}
