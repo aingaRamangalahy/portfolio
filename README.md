@@ -1,107 +1,128 @@
-# Portfolio Website
+# Portfolio - Nuxt 3
 
-This is a personal portfolio website built with modern web technologies. It showcases my skills, projects, experience, and education.
+A modern, responsive portfolio website built with Nuxt 3, featuring internationalization, dynamic theming, and server-side rendering.
 
-## Technologies Used
+## 🚀 Features
 
-- **Vue.js 3:** A progressive JavaScript framework for building user interfaces.
-- **Vite:** A fast build tool that provides a quicker and leaner development experience for modern web projects.
-- **TypeScript:** A statically typed superset of JavaScript that adds optional types.
-- **Tailwind CSS v4:** A utility-first CSS framework for rapid UI development.
-- **Shadcn-vue:** Re-usable components built using Radix UI and Tailwind CSS.
-- **Vue Router:** For client-side routing.
-- **VueUse:** A collection of Vue Composition Utilities.
-- **i18next:** For internationalization.
+- **Nuxt 3** - Modern Vue.js framework with SSR/SSG
+- **TypeScript** - Full type safety
+- **Internationalization** - Multi-language support (EN/FR)
+- **Dynamic Theming** - Multiple color themes with smooth transitions
+- **Responsive Design** - Mobile-first approach
+- **SEO Optimized** - Meta tags, structured data, and performance optimized
+- **Tailwind CSS** - Utility-first CSS framework
+- **Component Architecture** - Modular and reusable components
 
-## Features
+## 🛠️ Tech Stack
 
-- **Responsive Design:** Adapts to different screen sizes (mobile, tablet, desktop).
-- **Light Mode Only:** Designed with a clean and minimalist light aesthetic.
-- **Theming:** Supports multiple light color themes that can be switched by the user.
-- **Internationalization (i18n):** Content available in multiple languages (English and French).
-- **Component-Based Architecture:** Built with reusable Vue components.
-- **Optimized Performance:** Focus on Web Vitals and fast loading times.
-- **Sections:**
-    - Hero: Introduction and quick stats.
-    - About: Detailed information about me.
-    - Skills: Showcase of technical and soft skills.
-    - Experience: Professional work history.
-    - Education: Academic background.
-    - Projects: Portfolio of selected projects.
-    - Contact: Ways to get in touch.
+- **Framework**: Nuxt 3
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide Vue Next
+- **Analytics**: Vercel Analytics
+- **Deployment**: Vercel (recommended)
 
-## Getting Started
+## 📦 Installation
 
-### Prerequisites
-
-- Node.js (version 18.x or higher recommended)
-- npm or yarn or pnpm
-
-### Installation
-
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/your-username/your-portfolio-repo.git
-    cd your-portfolio-repo
-    ```
-
-2.  **Install dependencies:**
-    Using npm:
-    ```bash
-    npm install
-    ```
-    Or using yarn:
-    ```bash
-    yarn install
-    ```
-    Or using pnpm:
-    ```bash
-    pnpm install
-    ```
-
-### Running Locally
-
-To start the development server:
-
-Using npm:
+1. Clone the repository:
 ```bash
-npm run dev
+git clone <repository-url>
+cd portfolio
 ```
-Or using yarn:
+
+2. Install dependencies:
 ```bash
-yarn dev
+pnpm install
 ```
-Or using pnpm:
+
+3. Start the development server:
 ```bash
 pnpm dev
 ```
 
-This will typically start the server at `http://localhost:5173`.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Building for Production
+## 🏗️ Build
 
-To build the application for production:
-
-Using npm:
 ```bash
-npm run build
-```
-Or using yarn:
-```bash
-yarn build
-```
-Or using pnpm:
-```bash
+# Build for production
 pnpm build
+
+# Preview production build
+pnpm preview
+
+# Generate static site
+pnpm generate
 ```
 
-This command will create a `dist` folder with the optimized production build.
+## 🌍 Internationalization
 
-## Contributing
+The project supports multiple languages:
+- English (default)
+- French
 
-Contributions are welcome! If you have suggestions or improvements, feel free to open an issue or submit a pull request.
+Locale files are located in the `locales/` directory.
 
-## License
+## 🎨 Theming
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-(Note: You'll need to add a LICENSE file if you want to specify one) 
+The project includes multiple themes:
+- Modern Minimal (default)
+- Ghibli Studio
+- Slack
+- Claude AI
+
+Themes are managed through CSS custom properties and can be switched dynamically.
+
+## 📁 Project Structure
+
+```
+├── assets/          # Static assets (CSS, images)
+├── components/      # Vue components
+│   └── sections/    # Page sections
+├── composables/     # Vue composables
+├── layouts/         # Nuxt layouts
+├── locales/         # i18n translation files
+├── pages/           # Nuxt pages (file-based routing)
+├── plugins/         # Nuxt plugins
+├── public/          # Public static files
+├── utils/           # Utility functions
+├── app.vue          # Main app component
+├── nuxt.config.ts   # Nuxt configuration
+└── tailwind.config.js # Tailwind configuration
+```
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+1. Connect your repository to Vercel
+2. Deploy automatically on push to main branch
+
+### Other Platforms
+
+The project can be deployed to any platform that supports Node.js:
+- Netlify
+- Railway
+- DigitalOcean App Platform
+- AWS Amplify
+
+## 📝 Migration Notes
+
+This project was migrated from Vue 3 + Vite to Nuxt 3. Key changes include:
+
+- **File-based routing** instead of Vue Router
+- **Auto-imports** for components and composables
+- **SSR/SSG capabilities** for better SEO and performance
+- **Built-in i18n module** instead of Vue i18n plugin
+- **Nuxt-specific composables** for better DX
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License.

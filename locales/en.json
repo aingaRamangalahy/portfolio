@@ -1,0 +1,419 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "education": "Education",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
+    "languageSwitcherTooltip": "Change language",
+    "themeSwitcherTooltip": "Change theme",
+    "socials": {
+      "githubTooltip": "View my code on GitHub",
+      "linkedinTooltip": "Connect with me on LinkedIn"
+    },
+    "chooseTheme": "Choose Theme",
+    "language": "Language",
+    "darkMode": "Dark Mode",
+    "name": "Ainga"
+  },
+  "hero": {
+    "greeting": "Hi, I'm <span class=\"text-[var(--color-primary)]\">Ainga</span>",
+    "title": "Full-Stack Web Developer",
+    "description1": "Passionate, curious developer motivated by the desire to learn and improve constantly. With over 5 years of experience on various projects, I have developed strong listening skills and service orientation that enable me to work effectively in teams and meet client needs.",
+    "description2": "My technical capabilities are constantly evolving through continuous learning and regular technology monitoring. My goal is to provide innovative and high-performance solutions using best development practices and the most suitable technologies for each project.",
+    "description3": "I specialize in JavaScript and TypeScript development, with expertise in modern frameworks like Vue.js, Angular, and Node.js. My experience spans from building earth observation platforms for the \"new space\" domain to developing crowdfunding platforms for French municipalities.",
+    "description4": "Whether it's optimizing application performance, integrating complex APIs, or leading technical initiatives, I bring a combination of technical expertise and collaborative spirit to every project.",
+    "traits": {
+      "passionateLearner": "Passionate Learner",
+      "teamPlayer": "Team Player",
+      "serviceOriented": "Service Oriented"
+    },
+    "callToAction": "If this excites you, I'd love to hear from you.",
+    "viewWork": "View My Work",
+    "getInTouch": "Get In Touch",
+    "availableForWork": "Available for Work",
+    "availableDescription": "Currently accepting new projects and full-time opportunities. Let's build something amazing together.",
+    "quickStats": "At a Glance",
+    "stats": {
+      "projectsCompleted": "Projects Completed",
+      "yearsExperience": "Years Experience",
+      "technologies": "Technologies",
+      "basedIn": "Location",
+      "coreStacks": "Core Stacks"
+    },
+    "location": "Antananarivo, Madagascar",
+    "coreStacksList": ["Vue.js", "TypeScript", "Node.js", "Angular"],
+    "coreTechnologies": "Core Technologies",
+    "letsConnect": "Let's connect"
+  },
+  "about": {
+    "title": "About Me",
+    "whatDrivesMe": "What Drives Me",
+    "yearsExperienceValue": "5+ Years",
+    "coreStacksValue": "Vue.js • TS • Node.js",
+    "currentlyExploring": "Currently Exploring",
+    "learningItems": {
+      "aiMl": "AI/ML Integration",
+      "performance": "Performance Optimization", 
+      "animations": "Advanced Animations",
+      "accessibility": "Accessibility"
+    }
+  },
+  "experience": {
+    "title": "Professional Journey & Impact",
+    "subtitle": "Detailing my progression through diverse roles where I've driven innovation, delivered scalable solutions, and consistently contributed to team success.",
+    "achievements": "Key Achievements:",
+    "technologiesUsed": "Technologies Used",
+    "callToAction": {
+      "title": "Ready for New Challenges",
+      "description": "Let's discuss how my experience can contribute to your next project."
+    },
+    "positions": {
+      "angular_dev": {
+        "title": "Angular Developer",
+        "company": "MonLogement.ai",
+        "location": "Remote",
+        "period": "September 2024 – Present",
+        "description": "Maintenance and development of KaiR, an online appointment scheduling solution for the social housing sector.",
+        "achievements": [
+          "Continuous improvement of user interface through numerous ergonomic optimizations and bug fixes",
+          "Application performance improvement through Firebase cloud functions optimization and critical bug fixes",
+          "Development of reusable Angular components and maintenance of existing code"
+        ],
+        "tech": ["Angular 11", "NgRx", "Firebase", "GitLab", "ClickUp"]
+      },
+      "vue_node_dev": {
+        "title": "Vue and Node.js Developer",
+        "company": "Hairun Technology",
+        "location": "Antananarivo, Madagascar",
+        "period": "June 2022 – September 2024",
+        "description": "Maintenance and development of earth observation platform and crowdfunding platform for French municipalities.",
+        "achievements": [
+          "Developed interface for centralizing image and processing orders for earth observation platform",
+          "Created registration process for investors and borrowers on crowdfunding platform",
+          "Integrated Mangopay webhooks for real-time transaction notifications",
+          "Integrated France map with MapBox API highlighting project-carrying cities",
+          "Improved data management interface performance for better user experience"
+        ],
+        "tech": ["Vue.js", "Nuxt.js", "Vuetify", "Pinia", "Vuex", "Node.js", "Express", "MongoDB", "Vitest", "Nightwatch.js"]
+      },
+      "angular_node": {
+        "title": "Angular and Node.js Developer",
+        "company": "W3D",
+        "location": "Antananarivo, Madagascar",
+        "period": "June 2020 – May 2022",
+        "description": "Design and development of Asset Manager application for managing 3D resources and virtual conference platform.",
+        "achievements": [
+          "Created custom theme with Angular Material in harmony with design guidelines",
+          "Developed file sharing interface and API (listing, upload, download)",
+          "Built user management system with role assignment functionality",
+          "Developed real-time messaging system with Socket.io for Q&A sessions",
+          "Created content management system for presentation images and videos"
+        ],
+        "tech": ["Angular", "NgRx", "Node.js", "Express", "MongoDB", "Socket.io", "Angular Material", "Trello"]
+      },
+      "web_dev": {
+        "title": "Web Developer",
+        "company": "Hellotana",
+        "location": "Antananarivo, Madagascar",
+        "period": "July 2019 – January 2020",
+        "description": "Web development and maintenance focused on responsive design and dashboard development.",
+        "achievements": [
+          "Redesigned hellopro.fr product page with responsive integration",
+          "Dynamized pages with PHP and jQuery for better user interaction",
+          "Maintained \"Process BPO\" web application used internally",
+          "Designed and developed comprehensive dashboard for BPO agent activity monitoring"
+        ],
+        "tech": ["PHP", "Bootstrap", "jQuery", "HTML", "CSS"]
+      }
+    }
+  },
+  "education": {
+    "title": "Foundations & Lifelong Learning",
+    "subtitle": "My academic background and commitment to continuous professional development form the bedrock of my technical expertise and innovative approach.",
+    "coursework": "Relevant Coursework:",
+    "achievements": "Achievements:",
+    "gpa": "GPA",
+    "gpaValue": "N/A",
+    "commitment": {
+      "title": "Commitment to Learning",
+      "description": "Dedicated to continuous learning and staying at the forefront of technology."
+    },
+    "degrees": {
+      "masters": {
+        "degree": "Professional Master's Degree - General Computer Science Track",
+        "school": "National School of Computer Science",
+        "location": "Fianarantsoa, Madagascar",
+        "period": "2017 - 2019",
+        "description": "Advanced studies in computer science with focus on professional development and industry practices.",
+        "coursework": [
+          "Advanced Programming",
+          "Software Engineering",
+          "Database Design",
+          "System Architecture",
+          "Project Management"
+        ],
+        "achievements": [
+          "Professional Master's Degree"
+        ]
+      },
+      "bachelors": {
+        "degree": "Professional Bachelor's Degree - General Computer Science Track",
+        "school": "National School of Computer Science",
+        "location": "Fianarantsoa, Madagascar",
+        "period": "2014 - 2017",
+        "description": "Comprehensive foundation in computer science fundamentals and software development practices.",
+        "coursework": [
+          "Programming Fundamentals",
+          "Data Structures",
+          "Algorithms",
+          "Computer Systems",
+          "Web Development"
+        ],
+        "achievements": [
+          "Professional Bachelor's Degree"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "title": "Portfolio of Solutions",
+    "subtitle": "Explore a selection of key projects where I've applied my skills to solve complex challenges, develop impactful features, and deliver high-quality results.",
+    "categories": {
+      "webApp": "Web App",
+      "website": "Website",
+      "dashboard": "Dashboard"
+    },
+    "types": {
+      "personal": "Personal",
+      "professional": "Professional"
+    },
+    "techStack": "Tech Stack",
+    "live": "Live",
+    "private": "Private",
+    "callToAction": {
+      "title": "Explore More on GitHub",
+      "description": "Check out additional projects and contributions on my GitHub profile."
+    },
+    "items": {
+      "kair": {
+        "title": "KaiR - Appointment Scheduling Solution",
+        "description": "Online appointment scheduling solution for the social housing sector. Focused on UI/UX improvements and Firebase performance optimization.",
+        "category": "Web App",
+        "tech": ["Angular", "NgRx", "Firebase"],
+        "type": "professional"
+      },
+      "js_resources": {
+        "title": "JavaScript Resources",
+        "description": "Side project for a community based website for sharing top resources to learn JavaScript.",
+        "category": "Website",
+        "tech": ["Vue.js", "Nuxt.js", "TypeScript"],
+        "type": "personal"
+      },
+      "portfolio": {
+        "title": "Portfolio Website",
+        "description": "Personal portfolio website showcasing my skills, projects, and experiences.",
+        "category": "Website",
+        "tech": ["Vue.js", "TypeScript", "Vite"],
+        "type": "personal"
+      },
+      "earth_observation": {
+        "title": "Earth Observation Platform",
+        "description": "Platform for a French startup in the \"new space\" domain, featuring image and processing order management with enhanced data management interface.",
+        "category": "Web App",
+        "tech": ["Vue.js", "Node.js", "MongoDB"],
+        "type": "professional"
+      },
+      "crowdfunding": {
+        "title": "Municipal Crowdfunding Platform",
+        "description": "Crowdfunding platform for French municipalities with investor/borrower registration, Mangopay integration, and interactive France map with MapBox.",
+        "category": "Web App",
+        "tech": ["Angular", "Node.js", "MongoDB"],
+        "type": "professional"
+      },
+      "asset_manager": {
+        "title": "Asset Manager - 3D Resource Management",
+        "description": "Web application for managing 3D resources with file sharing capabilities, user management, and role assignment functionality.",
+        "category": "Web App",
+        "tech": ["Angular", "Node.js", "Express"],
+        "type": "professional"
+      },
+      "conference": {
+        "title": "Virtual Conference Platform",
+        "description": "Platform for international virtual conferences with content management, JWT authentication, and real-time Q&A messaging using Socket.io.",
+        "category": "Web App",
+        "tech": ["Angular", "Socket.io"],
+        "type": "professional"
+      },
+      "dashboard": {
+        "title": "BPO Activity Dashboard",
+        "description": "Comprehensive dashboard providing insights into BPO agent activity and tool performance with responsive design.",
+        "category": "Dashboard",
+        "tech": ["PHP", "jQuery", "Bootstrap"],
+        "type": "professional"
+      }
+    }
+  },
+  "skills": {
+    "title": "Technical Expertise",
+    "subtitle": "A comprehensive toolkit spanning modern web technologies, cloud infrastructure, and cutting-edge innovations.",
+    "descriptions": {
+      "frontend": "Building responsive, accessible, and performant user interfaces with a focus on modern frameworks and best practices.",
+      "backend": "Developing robust and scalable server-side applications, APIs, and database solutions.",
+      "tools": "Utilizing a wide range of development tools, platforms, and version control systems to streamline workflows.",
+      "management": "Applying agile methodologies and project management principles to ensure successful project delivery."
+    },
+    "showMore": "Show All Skills",
+    "showLess": "Show Core Skills",
+    "coreTitle": "Core Skills",
+    "additionalTitle": "Additional Skills",
+    "hiddenCategoriesMessage": "Some categories are hidden until you show all skills",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Tools & Platforms",
+      "management": "Project Management"
+    },
+    "skills": {
+      "frontend": [
+        { "name": "JavaScript", "core": true }, { "name": "TypeScript", "core": true }, { "name": "Vue.js", "core": true }, { "name": "Nuxt.js" }, { "name": "Angular", "core": true }, { "name": "Vuetify" }, { "name": "Angular Material" }, { "name": "NgRx" }, { "name": "Vuex" }, { "name": "Pinia" }
+      ],
+      "backend": [
+        { "name": "Node.js", "core": true }, { "name": "Express.js" }, { "name": "Nest.js" }, { "name": "Socket.io" }, { "name": "MongoDB", "core": true }, { "name": "MySQL" }, { "name": "Firebase" }, { "name": "DigitalOcean" }, { "name": "Supabase" }
+      ],
+      "tools": [
+        { "name": "Jest" }, { "name": "Vitest" }, { "name": "Nightwatch.js" }, { "name": "Playwright" }, { "name": "Git" }, { "name": "GitHub Projects" }, { "name": "GitLab" }, { "name": "Bitbucket" }
+      ],
+      "management": [
+        { "name": "Agile Methodologies" },
+        { "name": "Scrum" },
+        { "name": "Jira" },
+        { "name": "ClickUp" },
+        { "name": "Trello" }
+      ]
+    },
+    "callToAction": {
+      "title": "Ready to build?",
+      "description": "I'm always open to discussing new projects and opportunities."
+    }
+  },
+  "languages": {
+    "en": "English",
+    "fr": "Français"
+  },
+  "contact": {
+    "title": "Let's Collaborate",
+    "subtitle": "Eager to discuss how my expertise can contribute to your next venture or explore opportunities for impactful collaboration. Let's build something exceptional together.",
+    "getInTouch": "Initiate a Conversation",
+    "description": "Reach out to explore how we can achieve great things.",
+    "sendEmail": "Send me an email",
+    "labels": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    },
+    "socials": {
+      "email": {
+        "title": "Email",
+        "description": "Let's discuss your project"
+      },
+      "github": {
+        "title": "GitHub",
+        "description": "Check out my repositories"
+      },
+      "linkedin": {
+        "title": "LinkedIn",
+        "description": "Let's connect professionally"
+      }
+    },
+    "clickToOpen": "Click to open",
+    "openToOpportunities": "Open to Opportunities",
+    "basedIn": "Based in",
+    "availableForRemote": "Available for remote work worldwide"
+  },
+  "themeSwitcher": {
+    "title": "Themes"
+  },
+  "backToTop": {
+    "label": "Back to top",
+    "tooltip": "Back to top"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Retry"
+  },
+  "aria": {
+    "navigation": {
+      "main": "Main navigation",
+      "sections": "Page sections",
+      "currentSection": "Current section: {section}",
+      "navigateToSection": "Navigate to {section} section",
+      "hovering": "Hovering over {section}",
+      "skipToContent": "Skip to main content",
+      "skipToNavigation": "Skip to navigation"
+    },
+    "theme": {
+      "switcher": "Theme switcher",
+      "panel": "Theme selection panel",
+      "current": "Current theme: {theme}",
+      "select": "Select {theme} theme",
+      "changed": "Theme changed to {theme}",
+      "enableDarkMode": "Enable dark mode",
+      "disableDarkMode": "Disable dark mode"
+    },
+    "language": {
+      "switcher": "Language switcher", 
+      "panel": "Language selection panel",
+      "current": "Current language: {language}",
+      "select": "Select {language} language",
+      "changed": "Language changed to {language}"
+    },
+    "mobile": {
+      "menu": "Mobile menu",
+      "menuButton": "Toggle mobile menu",
+      "menuExpanded": "Mobile menu expanded",
+      "menuCollapsed": "Mobile menu collapsed"
+    },
+    "progress": {
+      "scrollProgress": "Page scroll progress: {percent}%",
+      "sectionProgress": "Section {section} progress: {percent}%",
+      "indicator": "Scroll progress indicator"
+    },
+    "social": {
+      "links": "Social media links",
+      "github": "Visit GitHub profile",
+      "linkedin": "Visit LinkedIn profile",
+      "email": "Send email"
+    },
+    "projects": {
+      "grid": "Projects grid",
+      "project": "Project: {title}",
+      "viewProject": "View project details for {title}",
+      "liveDemo": "View live demo of {title}",
+      "sourceCode": "View source code for {title}",
+      "technologies": "Technologies used: {tech}",
+      "modal": "Project details modal",
+      "closeModal": "Close project details"
+    },
+    "contact": {
+      "methods": "Contact methods",
+      "method": "Contact via {method}"
+    },
+    "status": {
+      "loading": "Loading content",
+      "error": "Error occurred",
+      "success": "Action completed successfully"
+    },
+    "buttons": {
+      "close": "Close",
+      "open": "Open",
+      "toggle": "Toggle",
+      "select": "Select",
+      "previous": "Previous",
+      "next": "Next"
+    }
+  }
+}
