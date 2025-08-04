@@ -4,7 +4,13 @@ export default defineNuxtConfig({
   ssr: true, // Enable SSR for better SEO and performance
 
   // CSS & Styling
-  css: ['~/assets/css/main.css'],
+  css: [
+    '~/assets/css/main.css',
+    '~/assets/css/configs.default.css',
+    '~/assets/css/configs.ghibli.css',
+    '~/assets/css/configs.slack.css',
+    '~/assets/css/configs.claude.css'
+  ],
 
   // Modules
   modules: [

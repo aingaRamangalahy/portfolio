@@ -15,6 +15,7 @@
     },
     "chooseTheme": "Choisir le Thème",
     "language": "Langue",
+    "darkMode": "Mode Sombre",
     "name": "Ainga"
   },
   "hero": {
@@ -51,7 +52,14 @@
     "title": "À Propos de Moi",
     "whatDrivesMe": "Ce Qui Me Motive",
     "yearsExperienceValue": "5+ ans",
-    "coreStacksValue": "Vue.js • TS • Node.js"
+    "coreStacksValue": "Vue.js • TS • Node.js",
+    "currentlyExploring": "Actuellement en Exploration",
+    "learningItems": {
+      "aiMl": "Intégration IA/ML",
+      "performance": "Optimisation des Performances",
+      "animations": "Animations Avancées", 
+      "accessibility": "Accessibilité"
+    }
   },
   "experience": {
     "title": "Parcours Professionnel & Impact",
@@ -328,9 +336,84 @@
   "themeSwitcher": {
     "title": "Thèmes"
   },
+  "backToTop": {
+    "label": "Retour en haut",
+    "tooltip": "Retour en haut"
+  },
   "common": {
     "loading": "Chargement...",
     "error": "Erreur",
     "retry": "Réessayer"
+  },
+  "aria": {
+    "navigation": {
+      "main": "Navigation principale",
+      "sections": "Sections de la page",
+      "currentSection": "Section actuelle : {section}",
+      "navigateToSection": "Naviguer vers la section {section}",
+      "hovering": "Survol de {section}",
+      "skipToContent": "Aller au contenu principal",
+      "skipToNavigation": "Aller à la navigation"
+    },
+    "theme": {
+      "switcher": "Sélecteur de thème",
+      "panel": "Panneau de sélection de thème",
+      "current": "Thème actuel : {theme}",
+      "select": "Sélectionner le thème {theme}",
+      "changed": "Thème changé vers {theme}",
+      "enableDarkMode": "Activer le mode sombre",
+      "disableDarkMode": "Désactiver le mode sombre"
+    },
+    "language": {
+      "switcher": "Sélecteur de langue", 
+      "panel": "Panneau de sélection de langue",
+      "current": "Langue actuelle : {language}",
+      "select": "Sélectionner la langue {language}",
+      "changed": "Langue changée vers {language}"
+    },
+    "mobile": {
+      "menu": "Menu mobile",
+      "menuButton": "Basculer le menu mobile",
+      "menuExpanded": "Menu mobile étendu",
+      "menuCollapsed": "Menu mobile réduit"
+    },
+    "progress": {
+      "scrollProgress": "Progression du défilement : {percent}%",
+      "sectionProgress": "Progression de la section {section} : {percent}%",
+      "indicator": "Indicateur de progression du défilement"
+    },
+    "social": {
+      "links": "Liens des réseaux sociaux",
+      "github": "Visiter le profil GitHub",
+      "linkedin": "Visiter le profil LinkedIn",
+      "email": "Envoyer un email"
+    },
+    "projects": {
+      "grid": "Grille des projets",
+      "project": "Projet : {title}",
+      "viewProject": "Voir les détails du projet {title}",
+      "liveDemo": "Voir la démo en direct de {title}",
+      "sourceCode": "Voir le code source de {title}",
+      "technologies": "Technologies utilisées : {tech}",
+      "modal": "Modal des détails du projet",
+      "closeModal": "Fermer les détails du projet"
+    },
+    "contact": {
+      "methods": "Méthodes de contact",
+      "method": "Contacter via {method}"
+    },
+    "status": {
+      "loading": "Chargement du contenu",
+      "error": "Une erreur s'est produite",
+      "success": "Action terminée avec succès"
+    },
+    "buttons": {
+      "close": "Fermer",
+      "open": "Ouvrir",
+      "toggle": "Basculer",
+      "select": "Sélectionner",
+      "previous": "Précédent",
+      "next": "Suivant"
+    }
   }
 }

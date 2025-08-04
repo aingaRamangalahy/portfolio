@@ -2,10 +2,25 @@
 import { ref, computed, onMounted } from 'vue'
 import { Code, Server, Wrench, Users, Star, Sparkles } from 'lucide-vue-next'
 import { useI18n } from 'vue-i18n'
+import { useScreenReader } from '~/composables/useScreenReader'
 
 const { t, tm } = useI18n()
 const mounted = ref(false)
 const showAllSkills = ref(false)
+
+// Initialize screen reader support
+const { announceStatus } = useScreenReader({
+  enableStatusAnnouncements: true
+})
+
+// Function to toggle skills visibility with screen reader announcement
+function toggleSkillsVisibility() {
+  showAllSkills.value = !showAllSkills.value
+  const message = showAllSkills.value 
+    ? t('skills.showMore') + ' - ' + t('aria.status.success')
+    : t('skills.showLess') + ' - ' + t('aria.status.success')
+  announceStatus(message, 'polite')
+}
 
 interface Skill {
   name: string
@@ -329,7 +344,7 @@ onMounted(() => {
 
         <!-- Toggle Button with Enhanced Design -->
         <div class="text-center mt-16">
-          <button @click="showAllSkills = !showAllSkills"
+          <button @click="toggleSkillsVisibility"
             class="group px-8 py-6 text-lg font-semibold border-2 border-[var(--color-primary)]/30 hover:border-[var(--color-primary)] hover:bg-[var(--color-primary)]/10 transition-all duration-300 rounded-xl bg-[var(--color-background)] text-[var(--color-text)] flex items-center gap-2 mx-auto">
             <Sparkles
               class="w-4 h-4 text-[var(--color-primary)] group-hover:rotate-12 transition-transform duration-300" />

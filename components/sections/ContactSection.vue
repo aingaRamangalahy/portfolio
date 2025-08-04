@@ -1,8 +1,14 @@
 <script setup lang="ts">
 import { Mail, Github, Linkedin, ArrowRight, MessageCircle } from 'lucide-vue-next'
+import { useScreenReader } from '~/composables/useScreenReader'
 
 const { t } = useI18n()
 const mounted = ref(false)
+
+// Initialize screen reader support
+const { announceStatus } = useScreenReader({
+  enableStatusAnnouncements: true
+})
 
 const socialLinks = [
   { 
@@ -32,11 +38,13 @@ const socialLinks = [
   },
 ]
 
-function openLink(href: string) {
+function openLink(href: string, label: string) {
   if (href.startsWith('mailto:')) {
     window.location.href = href
+    announceStatus(t('aria.contact.method', { method: t(label) }), 'polite')
   } else {
     navigateTo(href, { external: true, open: { target: '_blank' } })
+    announceStatus(t('aria.contact.method', { method: t(label) }), 'polite')
   }
 }
 
@@ -50,6 +58,8 @@ onMounted(() => {
     id="contact" 
     class="py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
     :style="{ backgroundColor: 'var(--color-background)' }"
+    :aria-labelledby="contactTitle"
+    role="region"
   >
     <div class="max-w-4xl mx-auto">
       <div
@@ -60,18 +70,23 @@ onMounted(() => {
       >
         <!-- Section Header -->
         <div class="text-center mb-20">
-          <h2 class="text-3xl md:text-4xl lg:text-5xl text-[var(--color-text)] mb-6 font-semibold">{{ t('contact.title') }}</h2>
+          <h2 id="contactTitle" class="text-3xl md:text-4xl lg:text-5xl text-[var(--color-text)] mb-6 font-semibold">{{ t('contact.title') }}</h2>
           <p class="text-lg text-[var(--color-text-secondary)] max-w-2xl mx-auto mb-12">{{ t('contact.subtitle') }}</p>
-          <div class="w-24 h-1 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary)]/50 mx-auto rounded-full"></div>
+          <div class="w-24 h-1 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary)]/50 mx-auto rounded-full" aria-hidden="true"></div>
         </div>
 
         <!-- Contact Methods -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20" role="list" :aria-label="t('aria.contact.methods')">
           <template v-for="(link, index) in socialLinks" :key="index">
             <div 
-              @click="openLink(link.href)"
+              @click="openLink(link.href, link.label)"
+              @keydown.enter="openLink(link.href, link.label)"
+              @keydown.space.prevent="openLink(link.href, link.label)"
+              tabindex="0"
+              role="listitem"
+              :aria-label="t('aria.contact.method', { method: link.title })"
               :class="[
-                'group cursor-pointer border transition-all duration-300 hover:shadow-xl hover:scale-[1.02] overflow-hidden rounded-2xl p-8 text-center',
+                'group cursor-pointer border transition-all duration-300 hover:shadow-xl hover:scale-[1.02] overflow-hidden rounded-2xl p-8 text-center focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2',
                 link.primary 
                   ? 'bg-[var(--color-primary)]/5 border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]' 
                   : 'bg-[var(--color-surface)] border-[var(--color-border)] hover:border-[var(--color-primary)]'

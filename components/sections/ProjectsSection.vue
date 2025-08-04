@@ -148,8 +148,12 @@ onMounted(() => {
 </script>
 
 <template>
-  <section id="projects" class="py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
-    :style="{ backgroundColor: 'var(--color-background)' }">
+  <section 
+    id="projects" 
+    class="py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+    :style="{ backgroundColor: 'var(--color-background)' }"
+    :aria-labelledby="projectsTitle"
+    role="region">
     <div class="max-w-4xl mx-auto">
       <div :class="[
         'transition-all duration-1000 ease-out',
@@ -157,20 +161,27 @@ onMounted(() => {
       ]">
         <!-- Section Header -->
         <div class="text-center mb-20">
-          <h2 class="text-3xl md:text-4xl lg:text-5xl text-[var(--color-text)] mb-6 font-semibold">{{
+          <h2 id="projectsTitle" class="text-3xl md:text-4xl lg:text-5xl text-[var(--color-text)] mb-6 font-semibold">{{
             t('projects.title') }}</h2>
           <p class="text-lg text-[var(--color-text-secondary)] max-w-3xl mx-auto">{{ t('projects.subtitle') }}</p>
           <div
-            class="w-24 h-1 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary)]/50 mx-auto rounded-full mt-6">
+            class="w-24 h-1 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary)]/50 mx-auto rounded-full mt-6"
+            aria-hidden="true">
           </div>
         </div>
 
         <!-- Project Cards Masonry Grid -->
-        <div class="masonry-grid">
+        <div class="masonry-grid" role="grid" :aria-label="t('aria.projects.grid')">
           <template v-for="(project, index) in projectKeys" :key="index">
-            <div @click="showPopover(index)"
+            <div 
+              @click="showPopover(index)"
+              @keydown.enter="showPopover(index)"
+              @keydown.space.prevent="showPopover(index)"
+              tabindex="0"
+              role="gridcell"
+              :aria-label="t('aria.projects.viewProject', { title: t(`projects.items.${project.key}.title`) })"
               :class="[
-                'masonry-item group bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-primary)]/50 hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer rounded-2xl relative',
+                'masonry-item group bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-primary)]/50 hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer rounded-2xl relative focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2',
                 // Vary heights for masonry effect
                 index % 5 === 0 ? 'masonry-tall' : 
                 index % 3 === 0 ? 'masonry-medium' : 'masonry-short'
@@ -297,9 +308,14 @@ onMounted(() => {
     <Teleport to="body">
       <div v-if="selectedProject !== null" 
            @click="hidePopover"
-           class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+           @keydown.escape="hidePopover"
+           class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+           role="dialog"
+           aria-modal="true"
+           :aria-labelledby="`project-modal-title-${selectedProject}`">
         <div @click.stop 
-             class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+             class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+             role="document">
           
           <!-- Header with Image -->
           <div class="relative">
@@ -312,9 +328,11 @@ onMounted(() => {
             </div>
             
             <!-- Close Button -->
-            <button @click="hidePopover" 
-                    class="absolute top-4 right-4 p-2 bg-white/90 hover:bg-white rounded-full transition-colors backdrop-blur-sm">
-              <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button 
+              @click="hidePopover" 
+              :aria-label="t('aria.projects.closeModal')"
+              class="absolute top-4 right-4 p-2 bg-white/90 hover:bg-white rounded-full transition-colors backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2">
+              <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
               </svg>
             </button>

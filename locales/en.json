@@ -15,6 +15,7 @@
     },
     "chooseTheme": "Choose Theme",
     "language": "Language",
+    "darkMode": "Dark Mode",
     "name": "Ainga"
   },
   "hero": {
@@ -51,7 +52,14 @@
     "title": "About Me",
     "whatDrivesMe": "What Drives Me",
     "yearsExperienceValue": "5+ Years",
-    "coreStacksValue": "Vue.js • TS • Node.js"
+    "coreStacksValue": "Vue.js • TS • Node.js",
+    "currentlyExploring": "Currently Exploring",
+    "learningItems": {
+      "aiMl": "AI/ML Integration",
+      "performance": "Performance Optimization", 
+      "animations": "Advanced Animations",
+      "accessibility": "Accessibility"
+    }
   },
   "experience": {
     "title": "Professional Journey & Impact",
@@ -328,9 +336,84 @@
   "themeSwitcher": {
     "title": "Themes"
   },
+  "backToTop": {
+    "label": "Back to top",
+    "tooltip": "Back to top"
+  },
   "common": {
     "loading": "Loading...",
     "error": "Error",
     "retry": "Retry"
+  },
+  "aria": {
+    "navigation": {
+      "main": "Main navigation",
+      "sections": "Page sections",
+      "currentSection": "Current section: {section}",
+      "navigateToSection": "Navigate to {section} section",
+      "hovering": "Hovering over {section}",
+      "skipToContent": "Skip to main content",
+      "skipToNavigation": "Skip to navigation"
+    },
+    "theme": {
+      "switcher": "Theme switcher",
+      "panel": "Theme selection panel",
+      "current": "Current theme: {theme}",
+      "select": "Select {theme} theme",
+      "changed": "Theme changed to {theme}",
+      "enableDarkMode": "Enable dark mode",
+      "disableDarkMode": "Disable dark mode"
+    },
+    "language": {
+      "switcher": "Language switcher", 
+      "panel": "Language selection panel",
+      "current": "Current language: {language}",
+      "select": "Select {language} language",
+      "changed": "Language changed to {language}"
+    },
+    "mobile": {
+      "menu": "Mobile menu",
+      "menuButton": "Toggle mobile menu",
+      "menuExpanded": "Mobile menu expanded",
+      "menuCollapsed": "Mobile menu collapsed"
+    },
+    "progress": {
+      "scrollProgress": "Page scroll progress: {percent}%",
+      "sectionProgress": "Section {section} progress: {percent}%",
+      "indicator": "Scroll progress indicator"
+    },
+    "social": {
+      "links": "Social media links",
+      "github": "Visit GitHub profile",
+      "linkedin": "Visit LinkedIn profile",
+      "email": "Send email"
+    },
+    "projects": {
+      "grid": "Projects grid",
+      "project": "Project: {title}",
+      "viewProject": "View project details for {title}",
+      "liveDemo": "View live demo of {title}",
+      "sourceCode": "View source code for {title}",
+      "technologies": "Technologies used: {tech}",
+      "modal": "Project details modal",
+      "closeModal": "Close project details"
+    },
+    "contact": {
+      "methods": "Contact methods",
+      "method": "Contact via {method}"
+    },
+    "status": {
+      "loading": "Loading content",
+      "error": "Error occurred",
+      "success": "Action completed successfully"
+    },
+    "buttons": {
+      "close": "Close",
+      "open": "Open",
+      "toggle": "Toggle",
+      "select": "Select",
+      "previous": "Previous",
+      "next": "Next"
+    }
   }
 }
